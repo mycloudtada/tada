@@ -62,7 +62,7 @@ theme:
     - ruby
 plugins:
   - search
-  - open-in-new-tab
+  # - open-in-new-tab
   - glightbox:
       touchNavigation: true
       loop: false
