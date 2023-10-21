@@ -1,0 +1,3970 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Helm/">
+      
+      
+        <link rel="next" href="../Kubernetes-cluster/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>Thiết lập Kubernetes Cluster Multi Node - Journey to Become a DevOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#thiet-lap-kubernetes-cluster-multi-node" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Journey to Become a DevOps" class="md-header__button md-logo" aria-label="Journey to Become a DevOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Journey to Become a DevOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Thiết lập Kubernetes Cluster Multi Node
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Journey to Become a DevOps" class="md-nav__button md-logo" aria-label="Journey to Become a DevOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Journey to Become a DevOps
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Journey to Become a DevOps - Hành trình để trở thành DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CI CD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CI CD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CI-CD/GitHub-Actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai Container lên “Alibaba Cloud Container Service for Kubernetes” (ACK) bằng GitHub  Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CI-CD/Huong-dan-cau-hinh-du-an-thuc-te-Jenkins-CI-CD-Pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cấu hình dự án thực tế bằng Jenkins-CI-CD-Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CI-CD/Jenkins-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jenkins là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CI-CD/Overview-CI-CD-Pipelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CI/CD Pipelines là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cloud Provider
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Provider
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/DevOps-Cloud-Provider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps Cloud Provider
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Overview-DevOps-The-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan DevOps và Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Alibaba Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Alibaba-Cloud-Pricing-Calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Alibaba Cloud Pricing Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Alibaba-Cloud-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/ApsaraVideo-VOD-Calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ApsaraVideo VOD là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Budget-Management-tren-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Billing Management trên Aliaba Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Elastic-Compute-Service-ECS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elastic Compute Service là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Object-Storage-Service-OSS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Object Storage Service là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Quan-Ly-RDS-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quản lý cơ sở dữ liệu (Database) RDS với Alibaba Cloud DMS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Resource-Access-Management-RAM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Resource Access Management (RAM) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Server-Migration-Center-SMC-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Server Migration Center (SMC) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Ticket-Submit-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn gởi ticket trên Alibaba Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microsoft Azure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Microsoft Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Compute-Models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Compute Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Networking-Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Networking Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Storage-Models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Storage Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Securiy-Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securiy Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Thuc-hanh-voi-Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuc hanh voi Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Containers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Cac-lua-chon-thay-the-Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các lựa chọn thay thế cho Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Cai-dat-Docker-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt Docker Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Containers-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containers là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-Compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Compose là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-Image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Image là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-Networking-Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Networking & Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-nang-cao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker nâng cao
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-questions-and-answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Strapi-Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Strapi là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Thuc-hanh-voi-Docker-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Images & Thực hành với Docker Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Tim-hieu-Docker-Swarm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Swarm là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers Orchestration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Containers Orchestration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kubernetes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Kubernetes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../75-Cau-k8s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Top 75 Kubernetes Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Application-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai ứng dụng Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Helm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Helm là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Thiết lập Kubernetes Cluster Multi Node
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Thiết lập Kubernetes Cluster Multi Node
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tom-tat-nhanh-ve-vagrant" class="md-nav__link">
+    Tóm tắt nhanh về Vagrant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moi-truong-lab-kubernetes" class="md-nav__link">
+    Môi trường Lab Kubernetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#huong-dan-ve-vagrantfile-va-shell-script" class="md-nav__link">
+    Hướng dẫn về Vagrantfile và Shell Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truy-cap-vao-kubernetes-cluster" class="md-nav__link">
+    Truy cập vào Kubernetes cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nhung-kien-thuc-ve-kubernetes" class="md-nav__link">
+    Những kiến thức về Kubernetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tai-lieu-tham-khao" class="md-nav__link">
+    Tài liệu tham khảo
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kubernetes-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai Kubernetes Cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kubernetes-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kubernetes-platform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes Platform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các thành phần trong Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Kubespray/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt Kubernetes Cluster với Kubespray
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Rancher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan về Rancher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../State-Ingress-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    State và Ingress trong Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IaC
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IaC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Loadbalancer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Roles & Deploying a Loadbalancer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Playbook-p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Playbooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Playbook-p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Playbooks (Continued)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Playbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Tower-AWX-Vault/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Tower AWX Vault
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Configuration-Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quản lý cấu hình là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Docker-Containers-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Containers Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/HCL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HCL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Infrastructure-as-Code-IaC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure as Code (IaC) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Setup-Ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Tao-VM-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tao VM Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Terraform-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Terraform-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Testing-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/DevOps-Cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bộ sưu tập các Cheatsheets dành cho DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/Public-DNS-Servers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Danh sách các Public DNS Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/Snapshot-Backup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapshot và Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/Training-AlibabaCloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Academy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Networking
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Networking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/DevOps-Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps và Mạng máy tính
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/EVE-NG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EVE NG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Mo-hinh-7-lop-OSI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mô hình mạng 7 lớp OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Network-Automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tự động hóa mạng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Network-Protocols/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giao thức mạng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Python-Network-Automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập trình Python trong tự động hóa Network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/TCP-UDP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giao thức TCP và UDP là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Working-With-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working With Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            Basic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/DevOps-va-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mối liên hệ giữa DevOps và Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/File-System-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File System Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/HashiCorp-Vagrant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Vagrant và WSL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Install-Software-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài phần mềm trên Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Lenh-Find-Trong-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Câu lệnh Find trong Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Linux-Basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số lệnh Linux phổ biến được sử dụng trong DevOps:
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Linux-Nano-Vim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Nano và Vim trên Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/SSH-Webserver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSH Webserver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Tu-Dong-Hoa-Voi-Bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tu Dong Hoa Voi Bash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Ubuntu-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Làm việc trên Ubuntu Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Vagrant-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vagrant là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/DevOps-Agile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devops và Agile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/DevOps-Lifecycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vòng đời DevOps - Tập trung vào ứng dụng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/DevOps-Roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap để trở thành DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/DevOps-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/Microservices-Monolith-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microservices, Monolith với Devops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/Quy-Trinh-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy trình của DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming Langguage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Programming Langguage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Ngon-Ngu-Lap-Trinh-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ngôn ngữ lập trình với DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/YAML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    YAML là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GoLang
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_3">
+            <span class="md-nav__icon md-icon"></span>
+            GoLang
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/GoLang/Bien-Hang-So-Go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biến, hằng số & kiểu dữ liệu trong Go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/GoLang/DevOps-Va-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GoLang là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/GoLang/Go-Nhan-Gia-Tri-Bien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go nhận giá trị đầu vào
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/GoLang/Go-Workspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go Workspace là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/GoLang/Hello-World-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chương trình đầu tiên với Go: Hello World
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/GoLang/Twitter-Voi-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ứng dụng GoLang với Twitter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_4">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Automation-with-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automation with Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Bat-Dau-Voi-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Build-an-App-in-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build an App in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Caro-LAN-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Cờ Caro Qua Mạng LAN Bằng Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Collision-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xử Lý Va Chạm Trong Game Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Flappy-Bird-Pygame-v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Flappybird Với Python version 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Flappy-Bird-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Flappy Bird với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Game-Space-Invaders-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Làm Game Space Invaders Bằng Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Introduction-to-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Introduction to Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Python-4-Concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Python Loops, functions, modules and libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Python-Data-Structures-OOP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Python Data Structures and OOP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Python-Debugging-Testing-Regular/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python: Debugging, Testing and Regular expression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Python-Pygame01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Cơ Bản Với Pygame - Phần 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Python-Pygame02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Cơ Bản Với Pygame - Phần 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Racing-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Đua Xe Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Scrolling-Background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cuộn Nền Trong Game Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Snake-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Rắn Săn Mồi Với Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Web-development-in-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web development in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1">
+            <span class="md-nav__icon md-icon"></span>
+            Containers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1_1" id="__nav_12_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Elasticsearch logstash kibana
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_12_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Elasticsearch logstash kibana
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Scripts/Containers/elasticsearch-logstash-kibana/ELK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ELK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Version Control
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Version Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Advanced-vi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git nâng cao (Tiếng Việt)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git Advanced
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Co-Ban/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git cơ bản
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Setup-Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt & Cấu hình Git trên Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt & Cấu hình Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git - Quản lý phiên bản
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/GitHub-GitLab-BitBucket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Khám phá GitHub | GitLab | BitBucket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Quy-Trinh-Lam-Viec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy trình làm việc với mã nguồn mở
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Staging-Changing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Staging & Changing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#tom-tat-nhanh-ve-vagrant" class="md-nav__link">
+    Tóm tắt nhanh về Vagrant
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#moi-truong-lab-kubernetes" class="md-nav__link">
+    Môi trường Lab Kubernetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#huong-dan-ve-vagrantfile-va-shell-script" class="md-nav__link">
+    Hướng dẫn về Vagrantfile và Shell Script
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#truy-cap-vao-kubernetes-cluster" class="md-nav__link">
+    Truy cập vào Kubernetes cluster
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#nhung-kien-thuc-ve-kubernetes" class="md-nav__link">
+    Những kiến thức về Kubernetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tai-lieu-tham-khao" class="md-nav__link">
+    Tài liệu tham khảo
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="thiet-lap-kubernetes-cluster-multi-node">Thiết lập Kubernetes Cluster Multi Node</h1>
+<p>Trong bài viết trước, chúng ta đã sử dụng một dự án thú vị để triển khai <strong>Kubernetes cluster</strong> đầu tiên của mình và thực hành chúng với công cụ <strong>CLI</strong> quan trọng nhất mà bạn sẽ gặp khi sử dụng <strong>Kubernetes</strong> (<strong>kubectl</strong>)</p>
+<p>Trong bài này, chúng ta sẽ sử dụng <strong>VirtualBox</strong> làm cơ sở nhưng như đã đề cập ở lần trước khi chúng ta nói về <strong>Vagrant</strong> trong phần về <strong>Linux</strong>, chúng ta có thể sử dụng bất kỳ công cụ ảo hoá nào được hỗ trợ, chúng ta sẽ sử dụng <strong>Ubuntu</strong>.</p>
+<h2 id="tom-tat-nhanh-ve-vagrant">Tóm tắt nhanh về Vagrant</h2>
+<p><strong>Vagrant</strong> là một tiện ích <strong>CLI</strong> giúp quản lý vòng đời các máy ảo của bạn. Chúng ta có thể sử dụng <strong>vagrant</strong> để tạo, xoá các máy ảo trên nhiều nền tảng khác nhau bao gồm <strong>vSphere</strong>, <strong>Virtual Box</strong> và cả <strong>Docker</strong>. Nó có các nhà cung cấp khác nhưng chúng ta sẽ chọn <strong>Virtual Box</strong> ở đây.</p>
+<p>Tôi sẽ sử dụng <a href="https://devopscube.com/kubernetes-cluster-vagrant/">bài viết và repository này</a> để cấu hình hệ thống. Tuy nhiên, tôi khuyên rằng nếu đây là lần đầu tiên bạn triển khai một <strong>Kubernetes cluster</strong> thì bạn cũng có thể xem xét thực hiện điều này một cách thủ công để sau đó ít nhất thì bạn cũng biết nó trông như thế nào. Phải công nhận sau mỗi bản phát hành của <strong>Kubernetes</strong>, các tác vụ để <strong>setup</strong> ngày càng được tinh gọn và hiệu quả hơn. Tôi nhớ thời của <strong>VMware</strong> và <strong>ESX</strong> và cách bạn mấy <strong>1 ngày</strong> để triển khai <strong>3 ESX server</strong>, bây giờ chúng ta có thể làm trong <strong>1 giờ</strong>. Chúng ta sẽ đi theo hướng đó khi nói đến <strong>Kubernetes</strong>.</p>
+<h2 id="moi-truong-lab-kubernetes">Môi trường Lab Kubernetes</h2>
+<p>Tôi đã tải lên trong <a href="../../../Scripts/Kubernetes/Vagrantfile">Kubernetes folder</a> <strong>vagrantfile</strong> mà chúng ta sẽ sử dụng để xây dựng môi trường. Lấy tệp này và điều hướng đến thư mục trong <strong>terminal</strong> của bạn. Tôi đang sử dụng <strong>Windows</strong> nên <strong>Powershell</strong> là lựa chọn để thực hiện các lệnh trên máy trạm của mình với <strong>vagrant</strong>. Nếu bạn chưa có <strong>vagrant</strong> thì bạn có thể sử dụng <strong>arkade</strong>, bài viết trước chúng ta đã đề cập đến nó khi cài đặt <strong>minikube</strong> và các công cụ khác. Chỉ sử dụng lệnh <code>arkade get vagrant</code> và bạn sẽ tải xuống và cài đặt phiên bản <strong>vagrant</strong> mới nhất.</p>
+<p><strong>Lưu ý:</strong> bạn nên <strong>download</strong> toàn bộ nội dung <a href="../../../Scripts/Kubernetes/Kubernetes.zip"><strong>Kubernetes</strong></a> để tiện cho việc thực hiện bài lab của mình.</p>
+<p>Khi bạn đang ở trong thư mục của mình, chạy <code>vagrant up</code> và nếu tất cả được cấu hình chính xác thì bạn sẽ thấy phần khởi động sau trong <strong>terminal</strong> của mình.</p>
+<p><img alt="Kubernetes Cluster Multi Node" src="../../../Image/Kubernetes-Cluster-Multi-Node01.png" /></p>
+<p>Trong <strong>terminal</strong>, bạn sẽ thấy một số bước đang diễn ra, nhưng trong thời gian chờ đợi, hãy xem những gì chúng ta đang chuẩn bị ở đây.</p>
+<p><img alt="Kubernetes Cluster Multi Node" src="../../../Image/Kubernetes-Cluster-Multi-Node02.png" /></p>
+<p>Từ những điều trên, bạn có thể thấy rằng chúng ta sẽ xây dựng <strong>03 máy ảo</strong>, chúng ta sẽ có một sẽ có  <strong>01 control plane node</strong> và <strong>02 worker nodes</strong>.</p>
+<p>Cũng trong hình ảnh đó, chúng ta thấy truy cập <strong>kubectl</strong> sẽ đến từ bên ngoài <strong>cluster</strong> tới <strong>kube apiserver</strong> trong khi thực tế như một phần của việc triển khai <strong>vagrant</strong>, chúng ta sẽ có <strong>kubectl</strong> trên mỗi <strong>node</strong> để có thể truy cập <strong>cluster</strong> từ trong tất cả các <strong>nodes</strong>.</p>
+<p>Quá trình thực hiện bài <strong>lab</strong> này có thể kéo dài từ <strong>5</strong> cho tới <strong>30 phút</strong> phụ thuộc vào thiếp lập của bạn.</p>
+<p>Tôi cũng sẽ sớm đề cập tới các tệp nhưng bạn sẽ nhận thấy nếu bạn xem qua <strong>vagrantfile</strong> bạn sẽ thấy 3 phần của triển khai và đó chính là nơi <strong>cluster</strong> được tạo ra. Chúng ta thấy việc sử dụng <strong>vagrant</strong> để triển khai các máy ảo và cài đặt hệ điều hành của mình dễ dàng như thế nào với các <strong>vagrant boxes</strong> cũng như khả năng chạy tập lệnh <strong>shell</strong> như một phần của quy trình triển khai là điều khá thú vị nếu chúng ta tự động hoá các bản dựng của các bài <strong>lab</strong>.</p>
+<p>Sau khi hoàn tất, chúng ta có thể <strong>ssh</strong> tới một trong các <strong>node</strong> của mình <code>vagrant ssh master</code> từ <strong>terinal</strong>, <strong>username</strong> và <strong>password</strong> mặc định là <code>vagrant/vagrant</code></p>
+<p>Bạn cũng có thể sử dụng <code>vagrant ssh node01</code> và <code>vagrant ssh node02</code> để truy cập các <strong>worker nodes</strong> nếu bạn muốn.</p>
+<p><img alt="Kubernetes Cluster Multi Node" src="../../../Image/Kubernetes-Cluster-Multi-Node03.png" /></p>
+<p>Bây giờ chúng ta đang ở một trong các <strong>node</strong> trong <strong>cluster</strong> mới của chúng ta, có thể sử dụng <code>kubectl get nodes</code> để hiển thị <strong>3 node cluster</strong> và trạng thái của chúng.</p>
+<p><img alt="Kubernetes Cluster Multi Node" src="../../../Image/Kubernetes-Cluster-Multi-Node04.png" /></p>
+<p>Tại thời điểm này, chúng ta có một <strong>cluster</strong> với 3 <strong>nodes</strong> đang chạy, với 1 <strong>control plane node</strong> và 2 <strong>worker nodes</strong>.</p>
+<h2 id="huong-dan-ve-vagrantfile-va-shell-script">Hướng dẫn về Vagrantfile và Shell Script</h2>
+<p>Nếu chúng ta xem tệp <strong>vagrantfile</strong> của mình, bạn sẽ thấy rằng chúng ta đang xác định một vài <strong>worker node</strong>, địa chỉ <strong>IP</strong> mạng cho mạng bắc cầu trong <strong>VirtualBox</strong> và sau đó là một số tên đặt. Một điều khác mà bạn cũng sẽ thấy là chúng ta đang gọi một số tập lệnh mà chúng ta muốn chạy trên các máy chủ cụ thể.</p>
+<pre><code>NUM_WORKER_NODES=2
+IP_NW=&quot;10.0.0.&quot;
+IP_START=10
+
+Vagrant.configure(&quot;2&quot;) do |config|
+    config.vm.provision &quot;shell&quot;, inline: &lt;&lt;-SHELL
+        apt-get update -y
+        echo &quot;$IP_NW$((IP_START))  master-node&quot; &gt;&gt; /etc/hosts
+        echo &quot;$IP_NW$((IP_START+1))  worker-node01&quot; &gt;&gt; /etc/hosts
+        echo &quot;$IP_NW$((IP_START+2))  worker-node02&quot; &gt;&gt; /etc/hosts
+    SHELL
+    config.vm.box = &quot;bento/ubuntu-21.10&quot;
+    config.vm.box_check_update = true
+
+    config.vm.define &quot;master&quot; do |master|
+      master.vm.hostname = &quot;master-node&quot;
+      master.vm.network &quot;private_network&quot;, ip: IP_NW + &quot;#{IP_START}&quot;
+      master.vm.provider &quot;virtualbox&quot; do |vb|
+          vb.memory = 4048
+          vb.cpus = 2
+          vb.customize [&quot;modifyvm&quot;, :id, &quot;--natdnshostresolver1&quot;, &quot;on&quot;]
+      end
+      master.vm.provision &quot;shell&quot;, path: &quot;scripts/common.sh&quot;
+      master.vm.provision &quot;shell&quot;, path: &quot;scripts/master.sh&quot;
+    end
+
+    (1..NUM_WORKER_NODES).each do |i|
+      config.vm.define &quot;node0#{i}&quot; do |node|
+        node.vm.hostname = &quot;worker-node0#{i}&quot;
+        node.vm.network &quot;private_network&quot;, ip: IP_NW + &quot;#{IP_START + i}&quot;
+        node.vm.provider &quot;virtualbox&quot; do |vb|
+            vb.memory = 2048
+            vb.cpus = 1
+            vb.customize [&quot;modifyvm&quot;, :id, &quot;--natdnshostresolver1&quot;, &quot;on&quot;]
+        end
+        node.vm.provision &quot;shell&quot;, path: &quot;scripts/common.sh&quot;
+        node.vm.provision &quot;shell&quot;, path: &quot;scripts/node.sh&quot;
+      end
+    end
+  end
+</code></pre>
+<p>Hãy chia nhỏ những tập lệnh đang được chạy. Chúng ta có ba tập lệnh được liệt kê trong <strong>VAGRANTFILE</strong> để chạy trên các <strong>node</strong> cụ thể.</p>
+<p><code>master.vm.provision "shell", path: "scripts/common.sh"</code></p>
+<p>Tập lệnh trên sẽ tập trung vào việc chuẩn bị cho các <strong>nodes</strong> sẵn sàng, nó sẽ chạy trên <strong>3 nodes</strong> của chúng ta và nó sẽ xoá tất cả các thành phần của <strong>Docker</strong> đang có và cài đặt lại <strong>Docker</strong> và <strong>ContainerD</strong> cũng như <strong>kubeadm</strong>, <strong>kubelet</strong> và <strong>kubectl</strong>. Tập lệnh này cũng sẽ cập nhật các gói phần mềm hiện có trên hệ thống.</p>
+<p><code>master.vm.provision "shell", path: "scripts/master.sh"</code></p>
+<p>Tập lệnh <code>master.sh</code> sẽ chỉ chạy trên <strong>control plane node</strong>, tập lệnh này sẽ tạo <strong>Kubernetes cluster</strong> sử dụng các lệnh <strong>kubeadm</strong>. Nó cũng sẽ chuẩn bị <strong>config context</strong> để truy cập vào <strong>cluster</strong> này, chúng ta sẽ nói đến sau đây.</p>
+<p><code>node.vm.provision "shell", path: "scripts/node.sh"</code></p>
+<p>Tập lệnh này chỉ đơn giản là lấy cấu hình do <strong>master</strong> tạo và kết nối các <strong>nodes</strong> của chúng ta vào <strong>Kubernetes cluster</strong>, quá trình kết nối này lại sử dụng <strong>kubeadmn</strong> và một tập lệnh khác có thể tìm thấy trong thư mục <strong>config</strong>.</p>
+<h2 id="truy-cap-vao-kubernetes-cluster">Truy cập vào Kubernetes cluster</h2>
+<p>Bây giờ chúng ta đã có hai <strong>cluster</strong> được triển khai, chúng ta có <strong>minikube cluster</strong> đã triển khai trong phần trước và có <strong>cluster 3 nodes</strong> mới mà chúng ta vừa triển khai trên <strong>VirtualBox</strong>.</p>
+<p>Ngoài ra, tệp cấu hình cũng giúp bạn có quyền truy cập trên máy của bạn, bạn đã chạy <strong>vagrant</strong> bao gồm cách chúng ta có thể truy cập vào <strong>cluster</strong> từ máy trạm của mình.</p>
+<p>Trước khi chúng ta nói đến điều đó, hãy nói qua về <strong>context</strong>.</p>
+<p><img alt="Kubernetes Cluster Multi Node" src="../../../Image/Kubernetes-Cluster-Multi-Node05.png" /></p>
+<p><strong>Context</strong> rất quan trọng, khả năng truy cập <strong>Kubernetes cluster</strong> từ máy tính để bàn hoặc máy tính xách tay của bạn là cần thiết. Có rất nhiều lựa chọn khác nhau và mọi người sử dụng các hệ điều hành khác nhau được mọi người sử dụng hàng ngày.</p>
+<p>Theo mặc định, ứng dụng <strong>Kubernetes CLI</strong> (<code>kubectl</code>) sử dụng <code>C:\Users\username\.kube\config</code> để lưu trữ các thông tin quan trọng của <strong>Kubernetes cluster</strong>, chẳng hạn như các <strong>endpoints</strong> và thông tin đăng nhập. Nếu bạn đã triển khai một <strong>cluster</strong>, bạn có thể thấy tệp này ở vị trí đó. Nhưng có thể bạn đang sử dụng <strong>node</strong> chính để chạy các lệnh <strong>kubectl</strong> của mình thông qua <strong>ssh</strong> hoặc các phương thức khác thì hi vọng bài viết này sẽ giúp bạn có thể kết nối từ máy trạm của mình.</p>
+<p>Sau đó, chúng ta cần lấy tệp <strong>kubeconfig</strong> từ <strong>cluster</strong> hoặc chúng ta cũng có thể lấy tệp này từ tệp cấu hình của mình sau khi triển khai, lấy nội dung của tệp này qua <strong>SCP</strong> hoặc chỉ cần mở một <strong>console session</strong> tới <strong>node</strong> chúng của bạn và sao chép xuống máy <strong>windows</strong> của bạn.</p>
+<p><img alt="Kubernetes Cluster Multi Node" src="../../../Image/Kubernetes-Cluster-Multi-Node06.png" /></p>
+<p>Sau đó, chúng ta sẽ lấy một bản sao của tệp cấu hình đó và chuyển nó đến vị trí <code>$HOME/.kube/config</code>.</p>
+<p><img alt="Kubernetes Cluster Multi Node" src="../../../Image/Kubernetes-Cluster-Multi-Node07.png" /></p>
+<p>Bây giờ, từ máy  của bạn, bạn có thể chạy <code>kubectl cluster-info</code> và <code>kubectl get nodes</code> để kiểm tra rằng bạn có quyền truy cập vào <strong>cluster</strong> của mình.</p>
+<p><img alt="Kubernetes Cluster Multi Node" src="../../../Image/Kubernetes-Cluster-Multi-Node08.png" /></p>
+<p>Điều này không chỉ cho phép kết nối và điểu khiển từ máy <strong>windows</strong> của bạn mà còn cho phép chúng ta thực hiện một số chuyển tiếp cổng để truy cập các dịch vụ nhất định từ máy tính <strong>windows</strong> của chúng ta.</p>
+<p>Nếu bạn quan tâm đến cách quản lý nhiều <strong>cluster</strong> trên máy trạm của mình thì tôi có hướng dẫn chi tiết hơn <a href="https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-6">tại đây</a>.</p>
+<p>Tôi đã thêm danh sách các bài blog hướng dẫn mà tôi đã thực hiện với các <strong>Kubernetes cluster</strong> khác nhau đang được triển khai.</p>
+<ul>
+<li><a href="https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-1">Kubernetes playground – How to choose your platform</a></li>
+<li><a href="https://vzilla.co.uk/vzilla-blog/building-the-home-lab-kubernetes-playground-part-2">Kubernetes playground – Setting up your cluster</a></li>
+<li><a href="https://vzilla.co.uk/vzilla-blog/getting-started-with-amazon-elastic-kubernetes-service-amazon-eks">Getting started with Amazon Elastic Kubernetes Service (Amazon EKS)</a></li>
+<li><a href="https://vzilla.co.uk/vzilla-blog/getting-started-with-microsoft-azure-kubernetes-service-aks">Getting started with Microsoft Azure Kubernetes Service (AKS)</a></li>
+<li><a href="https://vzilla.co.uk/vzilla-blog/getting-started-with-microsoft-aks-azure-powershell-edition">Getting Started with Microsoft AKS – Azure PowerShell Edition</a></li>
+<li><a href="https://vzilla.co.uk/vzilla-blog/getting-started-with-google-kubernetes-service-gke">Getting started with Google Kubernetes Service (GKE)</a></li>
+<li><a href="https://vzilla.co.uk/vzilla-blog/kubernetes-how-to-aws-bottlerocket-amazon-eks">Kubernetes, How to – AWS Bottlerocket + Amazon EKS</a></li>
+<li><a href="https://vzilla.co.uk/vzilla-blog/getting-started-with-civo-cloud">Getting started with CIVO Cloud</a></li>
+<li><a href="https://vzilla.co.uk/vzilla-blog/project_pace-kasten-k10-demo-environment-for-everyone">Minikube - Kubernetes Demo Environment For Everyone</a></li>
+</ul>
+<h2 id="nhung-kien-thuc-ve-kubernetes">Những kiến thức về Kubernetes</h2>
+<ul>
+<li>Kiến trúc Kubernetes</li>
+<li>Các câu lệnh kubectl </li>
+<li>Kubernetes YAML</li>
+<li>Kubernetes Ingress</li>
+<li>Kubernetes Services</li>
+<li>Helm Package Manager</li>
+<li>Lưu trữ liên tục - Persistent Storage</li>
+<li>Ứng dụng có trạng thái - Stateful Apps</li>
+</ul>
+<h2 id="tai-lieu-tham-khao">Tài liệu tham khảo</h2>
+<ul>
+<li><a href="https://kubernetes.io/docs/home/">Kubernetes Documentation</a></li>
+<li><a href="https://www.youtube.com/watch?v=X48VuDVv0do">TechWorld with Nana - Kubernetes Tutorial for Beginners [FULL COURSE in 4 Hours]</a></li>
+<li><a href="https://www.youtube.com/watch?v=s_o8dwzRlu4">TechWorld with Nana - Kubernetes Crash Course for Absolute Beginners</a></li>
+<li><a href="https://www.youtube.com/watch?v=KVBON1lA9N8">Kunal Kushwaha - Kubernetes Tutorial for Beginners | What is Kubernetes? Architecture Simplified!</a></li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4030 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Git-Advanced-vi/">
+      
+      
+        <link rel="next" href="../Git-Co-Ban/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>Git Advanced - Journey to Become a DevOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#git-advanced" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Journey to Become a DevOps" class="md-header__button md-logo" aria-label="Journey to Become a DevOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Journey to Become a DevOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Git Advanced
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Journey to Become a DevOps" class="md-nav__button md-logo" aria-label="Journey to Become a DevOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Journey to Become a DevOps
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Journey to Become a DevOps - Hành trình để trở thành DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CI CD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CI CD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CI-CD/GitHub-Actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai Container lên “Alibaba Cloud Container Service for Kubernetes” (ACK) bằng GitHub  Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CI-CD/Huong-dan-cau-hinh-du-an-thuc-te-Jenkins-CI-CD-Pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cấu hình dự án thực tế bằng Jenkins-CI-CD-Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CI-CD/Jenkins-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jenkins là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CI-CD/Overview-CI-CD-Pipelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CI/CD Pipelines là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cloud Provider
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Provider
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/DevOps-Cloud-Provider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps Cloud Provider
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Overview-DevOps-The-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan DevOps và Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Alibaba Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Alibaba-Cloud-Pricing-Calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Alibaba Cloud Pricing Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Alibaba-Cloud-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/ApsaraVideo-VOD-Calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ApsaraVideo VOD là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Budget-Management-tren-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Billing Management trên Aliaba Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Elastic-Compute-Service-ECS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elastic Compute Service là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Object-Storage-Service-OSS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Object Storage Service là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Quan-Ly-RDS-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quản lý cơ sở dữ liệu (Database) RDS với Alibaba Cloud DMS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Resource-Access-Management-RAM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Resource Access Management (RAM) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Server-Migration-Center-SMC-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Server Migration Center (SMC) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Ticket-Submit-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn gởi ticket trên Alibaba Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microsoft Azure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Microsoft Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Compute-Models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Compute Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Networking-Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Networking Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Storage-Models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Storage Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Microsoft-Azure/Securiy-Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securiy Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Microsoft-Azure/Thuc-hanh-voi-Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuc hanh voi Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Containers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Cac-lua-chon-thay-the-Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các lựa chọn thay thế cho Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Cai-dat-Docker-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt Docker Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Containers-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containers là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Docker-Compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Compose là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Docker-Image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Image là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Docker-Networking-Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Networking & Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Docker-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Docker-nang-cao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker nâng cao
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Docker-questions-and-answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Strapi-Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Strapi là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Thuc-hanh-voi-Docker-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Images & Thực hành với Docker Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Tim-hieu-Docker-Swarm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Swarm là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers Orchestration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Containers Orchestration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kubernetes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Kubernetes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/75-Cau-k8s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Top 75 Kubernetes Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Application-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai ứng dụng Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Helm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Helm là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Kubernetes-Cluster-Multi-Node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thiết lập Kubernetes Cluster Multi Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Kubernetes-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai Kubernetes Cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Kubernetes-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Kubernetes-platform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes Platform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các thành phần trong Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Kubespray/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt Kubernetes Cluster với Kubespray
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Rancher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan về Rancher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/State-Ingress-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    State và Ingress trong Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IaC
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IaC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Ansible-Config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Ansible-Loadbalancer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Roles & Deploying a Loadbalancer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Ansible-Playbook-p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Playbooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Ansible-Playbook-p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Playbooks (Continued)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Ansible-Playbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Ansible-Tower-AWX-Vault/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Tower AWX Vault
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Configuration-Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quản lý cấu hình là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Docker-Containers-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Containers Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/HCL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HCL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Infrastructure-as-Code-IaC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure as Code (IaC) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Setup-Ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Tao-VM-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tao VM Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Terraform-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Terraform-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Testing-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/DevOps-Cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bộ sưu tập các Cheatsheets dành cho DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Public-DNS-Servers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Danh sách các Public DNS Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Snapshot-Backup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapshot và Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Training-AlibabaCloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Academy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Networking
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Networking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/DevOps-Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps và Mạng máy tính
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/EVE-NG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EVE NG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/Mo-hinh-7-lop-OSI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mô hình mạng 7 lớp OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/Network-Automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tự động hóa mạng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/Network-Protocols/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giao thức mạng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/Python-Network-Automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập trình Python trong tự động hóa Network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/TCP-UDP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giao thức TCP và UDP là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/Working-With-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working With Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            Basic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/DevOps-va-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mối liên hệ giữa DevOps và Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/File-System-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File System Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/HashiCorp-Vagrant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Vagrant và WSL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Install-Software-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài phần mềm trên Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Lenh-Find-Trong-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Câu lệnh Find trong Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Linux-Basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số lệnh Linux phổ biến được sử dụng trong DevOps:
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Linux-Nano-Vim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Nano và Vim trên Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/SSH-Webserver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSH Webserver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Tu-Dong-Hoa-Voi-Bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tu Dong Hoa Voi Bash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Ubuntu-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Làm việc trên Ubuntu Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Vagrant-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vagrant là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/DevOps-Agile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devops và Agile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/DevOps-Lifecycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vòng đời DevOps - Tập trung vào ứng dụng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/DevOps-Roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap để trở thành DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/DevOps-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/Microservices-Monolith-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microservices, Monolith với Devops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/Quy-Trinh-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy trình của DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming Langguage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Programming Langguage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Ngon-Ngu-Lap-Trinh-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ngôn ngữ lập trình với DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/YAML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    YAML là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GoLang
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_3">
+            <span class="md-nav__icon md-icon"></span>
+            GoLang
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/GoLang/Bien-Hang-So-Go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biến, hằng số & kiểu dữ liệu trong Go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/GoLang/DevOps-Va-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GoLang là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/GoLang/Go-Nhan-Gia-Tri-Bien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go nhận giá trị đầu vào
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/GoLang/Go-Workspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go Workspace là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/GoLang/Hello-World-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chương trình đầu tiên với Go: Hello World
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/GoLang/Twitter-Voi-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ứng dụng GoLang với Twitter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_4">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Automation-with-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automation with Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Bat-Dau-Voi-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Build-an-App-in-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build an App in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Caro-LAN-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Cờ Caro Qua Mạng LAN Bằng Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Collision-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xử Lý Va Chạm Trong Game Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Flappy-Bird-Pygame-v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Flappybird Với Python version 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Flappy-Bird-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Flappy Bird với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Game-Space-Invaders-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Làm Game Space Invaders Bằng Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Introduction-to-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Introduction to Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Python-4-Concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Python Loops, functions, modules and libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Python-Data-Structures-OOP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Python Data Structures and OOP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Python-Debugging-Testing-Regular/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python: Debugging, Testing and Regular expression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Python-Pygame01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Cơ Bản Với Pygame - Phần 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Python-Pygame02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Cơ Bản Với Pygame - Phần 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Racing-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Đua Xe Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Scrolling-Background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cuộn Nền Trong Game Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Snake-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Rắn Săn Mồi Với Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Programming-Langguage/Python/Web-development-in-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web development in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1">
+            <span class="md-nav__icon md-icon"></span>
+            Containers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1_1" id="__nav_12_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Elasticsearch logstash kibana
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_12_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Elasticsearch logstash kibana
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Containers/elasticsearch-logstash-kibana/ELK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ELK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Version Control
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Version Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git-Advanced-vi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git nâng cao (Tiếng Việt)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Git Advanced
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Git Advanced
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-unstaging-discarding-restoring" class="md-nav__link">
+    Viewing, unstaging, discarding &amp; restoring
+  </a>
+  
+    <nav class="md-nav" aria-label="Viewing, unstaging, discarding & restoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-staged-and-unstaged-changes" class="md-nav__link">
+    Viewing the Staged and Unstaged Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-diff-tools" class="md-nav__link">
+    Visual Diff Tools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-history" class="md-nav__link">
+    Viewing the History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-a-commit" class="md-nav__link">
+    Viewing a Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unstaging-files" class="md-nav__link">
+    Unstaging Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discarding-local-changes" class="md-nav__link">
+    Discarding Local Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restoring-a-file-to-an-earlier-version" class="md-nav__link">
+    Restoring a File to an Earlier Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebase-vs-merge" class="md-nav__link">
+    Rebase vs Merge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git-Co-Ban/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git cơ bản
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git-Setup-Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt & Cấu hình Git trên Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git-Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt & Cấu hình Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git-Version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git - Quản lý phiên bản
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GitHub-GitLab-BitBucket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Khám phá GitHub | GitLab | BitBucket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Quy-Trinh-Lam-Viec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy trình làm việc với mã nguồn mở
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Staging-Changing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Staging & Changing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#viewing-unstaging-discarding-restoring" class="md-nav__link">
+    Viewing, unstaging, discarding &amp; restoring
+  </a>
+  
+    <nav class="md-nav" aria-label="Viewing, unstaging, discarding & restoring">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-staged-and-unstaged-changes" class="md-nav__link">
+    Viewing the Staged and Unstaged Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual-diff-tools" class="md-nav__link">
+    Visual Diff Tools
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-the-history" class="md-nav__link">
+    Viewing the History
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#viewing-a-commit" class="md-nav__link">
+    Viewing a Commit
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unstaging-files" class="md-nav__link">
+    Unstaging Files
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discarding-local-changes" class="md-nav__link">
+    Discarding Local Changes
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restoring-a-file-to-an-earlier-version" class="md-nav__link">
+    Restoring a File to an Earlier Version
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#rebase-vs-merge" class="md-nav__link">
+    Rebase vs Merge
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="git-advanced">Git Advanced</h1>
+<h2 id="viewing-unstaging-discarding-restoring">Viewing, unstaging, discarding &amp; restoring</h2>
+<p>Continuing from where we finished yesterday around some of the commands that we have with git and how to leverage git with your projects. Remember we have not touched GitHub or any other git-based services yet this is all to help you keep control of your projects locally at the moment, but they will all become useful when we start to integrate into those tools.</p>
+<h3 id="viewing-the-staged-and-unstaged-changes">Viewing the Staged and Unstaged Changes</h3>
+<p>It is good practice to make sure you view the staged and unstaged code before committing. We can do this by running the <code>git diff --staged</code> command</p>
+<p><img alt="img" src="/Image/Git-Advanced01.png" /></p>
+<p>This then shows us all the changes we have made and all new files we have added or deleted.</p>
+<p>changes in the modified files are indicated with <code>---</code> or <code>+++</code> you can see below that we just added +add some text below which means they are new lines.</p>
+<p><img alt="img" src="/Image/Git-Advanced02.png" /></p>
+<p>We can also run <code>git diff</code> to compare our staging area with our working directory. If we make some changes to our newly added file code.txt and add some lines of text.</p>
+<p><img alt="img" src="/Image/Git-Advanced03.png" /></p>
+<p>If we then run <code>git diff</code> we compare and see the output below.</p>
+<p><img alt="img" src="/Image/Git-Advanced04.png" /></p>
+<h3 id="visual-diff-tools">Visual Diff Tools</h3>
+<p>For me, the above is more confusing so I would much rather use a visual tool,</p>
+<p>To name a few visual diff tools:</p>
+<ul>
+<li>KDiff3</li>
+<li>P4Merge</li>
+<li>WinMerge (Windows Only)</li>
+<li>VSCode</li>
+</ul>
+<p>To set this in git we run the following command <code>git config --global diff.tool vscode</code></p>
+<p>We are going to run the above and we are going to set some parameters when we launch VScode.</p>
+<p><img alt="img" src="/Image/Git-Advanced05.png" /></p>
+<p>We can also check our configuration with <code>git config --global -e</code></p>
+<p><img alt="img" src="/Image/Git-Advanced06.png" /></p>
+<p>We can then use <code>git difftool</code> to now open our diff visual tool.</p>
+<p><img alt="img" src="/Image/Git-Advanced07.png" /></p>
+<p>Which then opens our VScode editor on the diff page and compares the two, we have only modified one file from nothing to now adding a line of code on the right side.</p>
+<p><img alt="img" src="/Image/Git-Advanced08.png" /></p>
+<p>I find this method much easier to track changes and this is something similar to what we will see when we look into git-based services such as GitHub.</p>
+<p>We can also use <code>git difftool --staged</code> to compare stage with committed files.</p>
+<p><img alt="img" src="/Image/Git-Advanced09.png" /></p>
+<p>Then we can cycle through our changed files before we commit.</p>
+<p><img alt="img" src="/Image/Git-Advanced10.png" /></p>
+<p>I am using VScode as my IDE and like most IDEs they have this functionality built in it is very rare you would need to run these commands from the terminal, although helpful if you don't have an IDE installed for some reason.</p>
+<h3 id="viewing-the-history">Viewing the History</h3>
+<p>We previously touched on <code>git log</code> which will provide us with a comprehensive view of all commits we have made in our repository.</p>
+<p><img alt="img" src="/Image/Git-Advanced11.png" /></p>
+<p>Each commit has its hexadecimal string, unique to the repository. Here you can see which branch we are working on and then also the author, date and commit message.</p>
+<p>We also have <code>git log --oneline</code> and this gives us a much smaller version of the hexadecimal string which we can use in other <code>diff</code> commands. We also only have the one-line description or commit message.</p>
+<p><img alt="img" src="/Image/Git-Advanced12.png" /></p>
+<p>We can reverse this into a start with the first commit by running <code>git log --oneline --reverse</code> and now we see our first commit at the top of our page.</p>
+<p><img alt="img" src="/Image/Git-Advanced14.png" /></p>
+<h3 id="viewing-a-commit">Viewing a Commit</h3>
+<p>Being able to look at the commit message is great if you have been conscious about following best practices and you have added a meaningful commit message, however, there is also <code>git show</code> command which allows us to inspect and view a commit.</p>
+<p>We can use <code>git log --oneline --reverse</code> to get a list of our commits. and then we can take those and run <code>git show &lt;commit ID&gt;</code></p>
+<p><img alt="img" src="/Image/Git-Advanced15.png" /></p>
+<p>The output of that command will look like below with the detail of the commit, author and what changed.</p>
+<p><img alt="img" src="/Image/Git-Advanced16.png" /></p>
+<p>We can also use <code>git show HEAD~1</code> where 1 is how many steps back from the current version we want to get back to.</p>
+<p>This is great if you want some detail on your files, but if we want to list all the files in a tree for the whole snapshot directory. We can achieve this by using the <code>git ls-tree HEAD~1</code> command, again going back one snapshot from the last commit. We can see below we have two blobs, these indicate files whereas the tree would indicate a directory. You can also see commits and tags in this information.</p>
+<p><img alt="img" src="/Image/Git-Advanced17.png" /></p>
+<p>We can then use the above to drill in and see the contents of our file (blobs) using the <code>git show</code> command.</p>
+<p><img alt="img" src="/Image/Git-Advanced18.png" /></p>
+<p>Then the contents of that specific version of the file will be shown.</p>
+<p><img alt="img" src="/Image/Git-Advanced19.png" /></p>
+<h3 id="unstaging-files">Unstaging Files</h3>
+<p>There will be a time when you have maybe used <code>git add .</code> but there are files you do not wish to commit to that snapshot just yet. In this example below I have added newfile.txt to my staging area but I am not ready to commit this file so I am going to use the <code>git restore --staged newfile.txt</code> to undo the <code>git add</code> step.</p>
+<p><img alt="img" src="/Image/Git-Advanced20.png" /></p>
+<p>We can also do the same to modified files such as main.js and unstage the commit, see above we have a green M for modified and then below we are unstaging those changes.</p>
+<p><img alt="img" src="/Image/Git-Advanced21.png" /></p>
+<p>I have found this command quite useful during this project as I sometimes work ahead of the days where I feel I want to make notes for the following day but I don't want to commit and push to the public GitHub repository.</p>
+<h3 id="discarding-local-changes">Discarding Local Changes</h3>
+<p>Sometimes we might make changes but we are not happy with those changes and we want to throw them away. We are going to use the <code>git restore</code> command again and we are going to be able to restore files from our snapshots or previous versions. We can run <code>git restore .</code> against our directory and we will restore everything from our snapshot but notice that our untracked file is still present. There is no previous file being tracked called newfile.txt.</p>
+<p><img alt="img" src="/Image/Git-Advanced22.png" /></p>
+<p>Now to remove newfile.txt or any untracked files. We can use <code>git clean</code> we will get a warning alone.</p>
+<p><img alt="img" src="/Image/Git-Advanced23.png" /></p>
+<p>Or if we know the consequences then we might want to run <code>git clean -fd</code> to force and remove all directories.</p>
+<p><img alt="img" src="/Image/Git-Advanced24.png" /></p>
+<h3 id="restoring-a-file-to-an-earlier-version">Restoring a File to an Earlier Version</h3>
+<p>As we have alluded to throughout a big portion of what Git can help with is being able to restore copies of your files from your snapshots (this is not a backup but it is a very fast restore point) My advice is that you also save copies of your code in other locations using a backup solution for this.</p>
+<p>As an example let's go and delete our most important file in our directory, notice we are using Unix-based commands to remove this from the directory, not git commands.</p>
+<p><img alt="img" src="/Image/Git-Advanced25.png" /></p>
+<p>Now we have no readme.md in our working directory. We could have used <code>git rm readme.md</code> and this would then be reflected in our git database. Let's also delete it from here to simulate it being removed completely.</p>
+<p><img alt="img" src="/Image/Git-Advanced26.png" /></p>
+<p>Let's now commit this with a message and prove that we no longer have anything in our working directory or staging area.</p>
+<p><img alt="img" src="/Image/Git-Advanced27.png" /></p>
+<p>Mistakes were made and we now need this file back!</p>
+<p>We could use the <code>git undo</code> command which will undo the last commit, but what if it was a while back? We can use our <code>git log</code> command to find our commits and then we find that our file is in the last commit but we don't all of those commits to be undone so we can then use this command <code>git restore --source=HEAD~1 README.md</code> to specifically find the file and restore it from our snapshot.</p>
+<p>You can see using this process we now have the file back in our working directory.</p>
+<p><img alt="img" src="/Image/Git-Advanced28.png" /></p>
+<p>We now have a new untracked file and we can use our commands previously mentioned to track, stage and commit our files and changes.</p>
+<h3 id="rebase-vs-merge">Rebase vs Merge</h3>
+<p>This seems to be the biggest headache when it comes to Git and when to use rebase vs using merge on your git repositories.</p>
+<p>The first thing to know is that both <code>git rebase</code> and <code>git merge</code> solve the same problem. Both are to integrate changes from one branch into another branch. However, they do this in different ways.</p>
+<p>Let's start with a new feature in a new dedicated branch. The Main branch continues with new commits.</p>
+<p><img alt="img" src="/Image/Git-Advanced29.png" /></p>
+<p>The easy option here is to use <code>git merge feature main</code> which will merge the main branch into the feature branch.</p>
+<p><img alt="img" src="/Image/Git-Advanced30.png" /></p>
+<p>Merging is easy because it is non-destructive. The existing branches are not changed in any way. However, this also means that the feature branch will have an irrelevant merge commit every time you need to incorporate upstream changes. If the main is very busy or active this will or can pollute the feature branch history.</p>
+<p>As an alternate option, we can rebase the feature branch onto the main branch using</p>
+<pre><code>git checkout feature
+git rebase main
+</code></pre>
+<p>This moves the feature branch (the entire feature branch) effectively incorporating all of the new commits in the main. But, instead of using a merge commit, rebasing re-writes the project history by creating brand new commits for each commit in the original branch.</p>
+<p><img alt="img" src="/Image/Git-Advanced31.png" /></p>
+<p>The biggest benefit of rebasing is a much cleaner project history. It also eliminates unnecessary merge commits. and as you compare the last two images, you can follow arguably a much cleaner linear project history.</p>
+<p>Although it's still not a foregone conclusion, choosing the cleaner history also comes with tradeoffs, If you do not follow the <a href="https://www.atlassian.com/git/tutorials/merging-vs-rebasing#the-golden-rule-of-rebasing">The Golden rule of rebasing</a> re-writing project history can be potentially catastrophic for your collaboration workflow. And, less importantly, rebasing loses the context provided by a merge commit—you can’t see when upstream changes were incorporated into the feature.</p>
+<h2 id="resources">Resources</h2>
+<ul>
+<li><a href="https://www.youtube.com/watch?v=Yc8sCSeMhi4">What is Version Control?</a></li>
+<li><a href="https://www.youtube.com/watch?v=kr62e_n6QuQ">Types of Version Control System</a></li>
+<li><a href="https://www.youtube.com/watch?v=8JJ101D3knE&amp;t=52s">Git Tutorial for Beginners</a></li>
+<li><a href="https://www.youtube.com/watch?v=Uszj_k0DGsg">Git for Professionals Tutorial</a></li>
+<li><a href="https://www.youtube.com/watch?v=RGOj5yH7evk&amp;t=8s">Git and GitHub for Beginners - Crash Course</a></li>
+<li><a href="https://www.youtube.com/watch?v=apGV9Kg7ics">Complete Git and GitHub Tutorial</a></li>
+<li><a href="https://www.atlassian.com/git/tutorials/atlassian-git-cheatsheet">Git cheatsheet</a></li>
+<li><a href="https://veducate.co.uk/exploring-the-git-command-line/">Exploring the Git command line – A getting started guide</a></li>
+<li>https://github.com/MichaelCade/90DaysOfDevOps/blob/main/2022/Days/day39.md</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>

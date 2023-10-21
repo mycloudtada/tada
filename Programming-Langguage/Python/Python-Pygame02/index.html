@@ -1,0 +1,4358 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Python-Pygame01/">
+      
+      
+        <link rel="next" href="../Racing-Pygame/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>Lập Trình Game Cơ Bản Với Pygame - Phần 2 - Journey to Become a DevOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#lap-trinh-game-co-ban-voi-pygame-phan-2" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Journey to Become a DevOps" class="md-header__button md-logo" aria-label="Journey to Become a DevOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Journey to Become a DevOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Lập Trình Game Cơ Bản Với Pygame - Phần 2
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Journey to Become a DevOps" class="md-nav__button md-logo" aria-label="Journey to Become a DevOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Journey to Become a DevOps
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Journey to Become a DevOps - Hành trình để trở thành DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CI CD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CI CD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CI-CD/GitHub-Actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai Container lên “Alibaba Cloud Container Service for Kubernetes” (ACK) bằng GitHub  Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CI-CD/Huong-dan-cau-hinh-du-an-thuc-te-Jenkins-CI-CD-Pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cấu hình dự án thực tế bằng Jenkins-CI-CD-Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CI-CD/Jenkins-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jenkins là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CI-CD/Overview-CI-CD-Pipelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CI/CD Pipelines là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cloud Provider
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Provider
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/DevOps-Cloud-Provider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps Cloud Provider
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Overview-DevOps-The-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan DevOps và Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Alibaba Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Alibaba-Cloud-Pricing-Calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Alibaba Cloud Pricing Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Alibaba-Cloud-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/ApsaraVideo-VOD-Calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ApsaraVideo VOD là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Budget-Management-tren-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Billing Management trên Aliaba Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Elastic-Compute-Service-ECS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elastic Compute Service là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Object-Storage-Service-OSS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Object Storage Service là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Quan-Ly-RDS-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quản lý cơ sở dữ liệu (Database) RDS với Alibaba Cloud DMS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Resource-Access-Management-RAM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Resource Access Management (RAM) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Server-Migration-Center-SMC-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Server Migration Center (SMC) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Ticket-Submit-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn gởi ticket trên Alibaba Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microsoft Azure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Microsoft Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Compute-Models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Compute Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Networking-Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Networking Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Storage-Models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Storage Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Securiy-Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securiy Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Thuc-hanh-voi-Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuc hanh voi Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Containers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Cac-lua-chon-thay-the-Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các lựa chọn thay thế cho Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Cai-dat-Docker-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt Docker Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Containers-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containers là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-Compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Compose là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-Image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Image là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-Networking-Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Networking & Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-nang-cao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker nâng cao
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-questions-and-answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Strapi-Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Strapi là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Thuc-hanh-voi-Docker-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Images & Thực hành với Docker Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Tim-hieu-Docker-Swarm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Swarm là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers Orchestration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Containers Orchestration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kubernetes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Kubernetes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/75-Cau-k8s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Top 75 Kubernetes Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Application-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai ứng dụng Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Helm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Helm là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Kubernetes-Cluster-Multi-Node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thiết lập Kubernetes Cluster Multi Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Kubernetes-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai Kubernetes Cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Kubernetes-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Kubernetes-platform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes Platform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các thành phần trong Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Kubespray/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt Kubernetes Cluster với Kubespray
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Rancher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan về Rancher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/State-Ingress-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    State và Ingress trong Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IaC
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IaC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Loadbalancer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Roles & Deploying a Loadbalancer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Playbook-p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Playbooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Playbook-p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Playbooks (Continued)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Playbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Tower-AWX-Vault/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Tower AWX Vault
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Configuration-Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quản lý cấu hình là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Docker-Containers-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Containers Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/HCL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HCL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Infrastructure-as-Code-IaC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure as Code (IaC) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Setup-Ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Tao-VM-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tao VM Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Terraform-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Terraform-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Testing-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/DevOps-Cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bộ sưu tập các Cheatsheets dành cho DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/Public-DNS-Servers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Danh sách các Public DNS Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/Snapshot-Backup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapshot và Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/Training-AlibabaCloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Academy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Networking
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Networking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/DevOps-Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps và Mạng máy tính
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/EVE-NG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EVE NG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Mo-hinh-7-lop-OSI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mô hình mạng 7 lớp OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Network-Automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tự động hóa mạng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Network-Protocols/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giao thức mạng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Python-Network-Automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập trình Python trong tự động hóa Network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/TCP-UDP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giao thức TCP và UDP là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Working-With-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working With Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            Basic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/DevOps-va-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mối liên hệ giữa DevOps và Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/File-System-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File System Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/HashiCorp-Vagrant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Vagrant và WSL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Install-Software-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài phần mềm trên Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Lenh-Find-Trong-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Câu lệnh Find trong Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Linux-Basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số lệnh Linux phổ biến được sử dụng trong DevOps:
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Linux-Nano-Vim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Nano và Vim trên Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/SSH-Webserver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSH Webserver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Tu-Dong-Hoa-Voi-Bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tu Dong Hoa Voi Bash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Ubuntu-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Làm việc trên Ubuntu Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../OS/Basic/Vagrant-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vagrant là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/DevOps-Agile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devops và Agile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/DevOps-Lifecycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vòng đời DevOps - Tập trung vào ứng dụng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/DevOps-Roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap để trở thành DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/DevOps-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/Microservices-Monolith-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microservices, Monolith với Devops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/Quy-Trinh-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy trình của DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming Langguage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Programming Langguage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Ngon-Ngu-Lap-Trinh-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ngôn ngữ lập trình với DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../YAML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    YAML là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GoLang
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_3">
+            <span class="md-nav__icon md-icon"></span>
+            GoLang
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GoLang/Bien-Hang-So-Go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biến, hằng số & kiểu dữ liệu trong Go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GoLang/DevOps-Va-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GoLang là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GoLang/Go-Nhan-Gia-Tri-Bien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go nhận giá trị đầu vào
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GoLang/Go-Workspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go Workspace là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GoLang/Hello-World-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chương trình đầu tiên với Go: Hello World
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../GoLang/Twitter-Voi-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ứng dụng GoLang với Twitter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_4" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11_4">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Automation-with-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automation with Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Bat-Dau-Voi-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Build-an-App-in-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build an App in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Caro-LAN-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Cờ Caro Qua Mạng LAN Bằng Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Collision-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xử Lý Va Chạm Trong Game Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Flappy-Bird-Pygame-v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Flappybird Với Python version 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Flappy-Bird-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Flappy Bird với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Game-Space-Invaders-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Làm Game Space Invaders Bằng Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Introduction-to-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Introduction to Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python-4-Concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Python Loops, functions, modules and libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python-Data-Structures-OOP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Python Data Structures and OOP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python-Debugging-Testing-Regular/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python: Debugging, Testing and Regular expression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python-Pygame01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Cơ Bản Với Pygame - Phần 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Cơ Bản Với Pygame - Phần 2
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Cơ Bản Với Pygame - Phần 2
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mot-so-ham-ve-thuong-gap" class="md-nav__link">
+    Một số hàm vẽ thường gặp
+  </a>
+  
+    <nav class="md-nav" aria-label="Một số hàm vẽ thường gặp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ham-nay-dung-e-ve-hinh-tron" class="md-nav__link">
+    Hàm này dùng để vẽ hình tròn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ham-nay-dung-e-ve-hinh-elip" class="md-nav__link">
+    Hàm này dùng để vẽ hình elip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ham-nay-dung-e-ve-a-giac" class="md-nav__link">
+    Hàm này dùng để vẽ đa giác
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ham-nay-dung-e-ve-mot-oan-thang" class="md-nav__link">
+    Hàm này dùng để vẽ một đoạn thẳng
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tao-chuyen-ong-trong-game" class="md-nav__link">
+    Tạo chuyển động trong game
+  </a>
+  
+    <nav class="md-nav" aria-label="Tạo chuyển động trong game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ve-chu" class="md-nav__link">
+    Vẽ chữ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#them-hinh-anh" class="md-nav__link">
+    Thêm hình ảnh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-kien" class="md-nav__link">
+    Sự kiện
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket" class="md-nav__link">
+    Kết
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Racing-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Đua Xe Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Scrolling-Background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cuộn Nền Trong Game Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Snake-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Rắn Săn Mồi Với Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Web-development-in-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web development in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1">
+            <span class="md-nav__icon md-icon"></span>
+            Containers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1_1" id="__nav_12_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Elasticsearch logstash kibana
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_12_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Elasticsearch logstash kibana
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Scripts/Containers/elasticsearch-logstash-kibana/ELK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ELK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Version Control
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Version Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Advanced-vi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git nâng cao (Tiếng Việt)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git Advanced
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Co-Ban/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git cơ bản
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Setup-Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt & Cấu hình Git trên Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt & Cấu hình Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git - Quản lý phiên bản
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/GitHub-GitLab-BitBucket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Khám phá GitHub | GitLab | BitBucket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Quy-Trinh-Lam-Viec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy trình làm việc với mã nguồn mở
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Staging-Changing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Staging & Changing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#mot-so-ham-ve-thuong-gap" class="md-nav__link">
+    Một số hàm vẽ thường gặp
+  </a>
+  
+    <nav class="md-nav" aria-label="Một số hàm vẽ thường gặp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ham-nay-dung-e-ve-hinh-tron" class="md-nav__link">
+    Hàm này dùng để vẽ hình tròn
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ham-nay-dung-e-ve-hinh-elip" class="md-nav__link">
+    Hàm này dùng để vẽ hình elip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ham-nay-dung-e-ve-a-giac" class="md-nav__link">
+    Hàm này dùng để vẽ đa giác
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ham-nay-dung-e-ve-mot-oan-thang" class="md-nav__link">
+    Hàm này dùng để vẽ một đoạn thẳng
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tao-chuyen-ong-trong-game" class="md-nav__link">
+    Tạo chuyển động trong game
+  </a>
+  
+    <nav class="md-nav" aria-label="Tạo chuyển động trong game">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ve-chu" class="md-nav__link">
+    Vẽ chữ
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#them-hinh-anh" class="md-nav__link">
+    Thêm hình ảnh
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-kien" class="md-nav__link">
+    Sự kiện
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#ket" class="md-nav__link">
+    Kết
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="lap-trinh-game-co-ban-voi-pygame-phan-2">Lập Trình Game Cơ Bản Với Pygame - Phần 2</h1>
+<p>Trong bài <a href="../Python-Pygame01/">hướng dẫn trước</a>, mình đã giới thiệu khá nhiều thứ trong <strong>pygame</strong>. Trong bài hướng dẫn lần này, chúng ta sẽ tiếp tục tìm hiểu những thứ cơ bản khác của <strong>pygame</strong>. Đây là những phần các bạn cần nắm để có thể làm được một <strong>game</strong> hoàn chỉnh, bao gồm: cách thêm hình ảnh vào <strong>game</strong>, tạo chuyển động trong <strong>game</strong>, bắt sự kiện,... Bây giờ chúng ta cùng bắt đầu thôi!</p>
+<h2 id="mot-so-ham-ve-thuong-gap">Một số hàm vẽ thường gặp</h2>
+<p>Trong bài hướng dẫn trước chúng ta đã tìm hiểu kĩ cách vẽ một hình chữ nhật. Trong phần này mình sẽ giới thiệu nhanh qua những hàm vẽ thường dùng trong <strong>pygame</strong>. Thực tế, trong các <strong>game</strong> người ta ít dùng các hàm để vẽ những hình ảnh, mà người ta sẽ dùng những file ảnh để thêm vào trong <strong>game</strong>. Mình thì dùng các hàm vẽ này trong lúc <strong>test</strong> thử hoạt động của <strong>game</strong> trước khi đặt những hình ảnh vào. Ví dụ, nếu mình muốn làm <strong>game</strong> <code>Flappy Bird</code> thì mình sẽ vẽ con chim là hình <strong>elip</strong> trước, sau khi mọi thứ hoạt động ổn định thì mình sẽ tìm hình ảnh con chim để thay thế. Cách để thêm hình ảnh vào thì mình sẽ nói trong phần sau. Bây giờ các bạn hãy xem nhanh qua đoạn <strong>code</strong> này nhe.</p>
+<pre><code class="language-python">import pygame, sys
+from pygame.locals import *
+
+pygame.init()
+
+DISPLAYSURF = pygame.display.set_mode((400, 300))
+pygame.display.set_caption('Draw')
+
+# Tạo sẵn các màu sắc
+BLACK = (  0,   0,   0)
+WHITE = (255, 255, 255)
+RED   = (255,   0,   0)
+GREEN = (  0, 255,   0)
+BLUE  = (  0,   0, 255)
+
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
+    DISPLAYSURF.fill(WHITE)
+
+    pygame.draw.rect(DISPLAYSURF, RED, (10, 10, 100, 50))# Hình chữ nhật
+    pygame.draw.rect(DISPLAYSURF, GREEN, (150, 10, 100, 50), 2)# Hình chữ nhật rỗng
+    pygame.draw.circle(DISPLAYSURF, RED, (50, 100), 20) # Hình tròn
+    pygame.draw.circle(DISPLAYSURF, BLUE, (200, 100), 20, 1)# Hình tròn rỗng
+    pygame.draw.ellipse(DISPLAYSURF, RED, (10, 150, 100, 50))# Hình elip
+    pygame.draw.ellipse(DISPLAYSURF, GREEN, (150, 150, 100, 50), 3)# Hình elip rỗng
+    pygame.draw.polygon(DISPLAYSURF, RED, ((10, 220), (150, 230), (100 ,290), (30, 270)))# Đa giác
+    pygame.draw.polygon(DISPLAYSURF, BLUE, ((160, 220), (300, 230), (250 ,290), (180, 270)), 2)# Đa giác rỗng
+    pygame.draw.line(DISPLAYSURF, BLACK, (300, 50), (350, 150), 4)# Đoạn thẳng
+
+    pygame.display.update()
+</code></pre>
+<p>Đây là kết quả khi chạy đoạn <strong>code</strong> trên:</p>
+<p><img alt="Pygame" src="../../../Image/Pygame09.png" /></p>
+<p>Hàm vẽ hình chữ nhật đã được giới thiệu ở phần trước. Bây giờ chúng ta tìm hiểu các hàm vẽ khác.</p>
+<h3 id="ham-nay-dung-e-ve-hinh-tron">Hàm này dùng để vẽ hình tròn</h3>
+<pre><code class="language-python">pygame.draw.circle(surface, color, center, radius, width) 
+</code></pre>
+<ul>
+<li><code>surface</code> là nơi để vẽ lên.</li>
+<li><code>color</code> là màu được vẽ.</li>
+<li><code>center</code> là một tuple (hoặc list) thể hiện toạ độ tâm hình tròn.</li>
+<li><code>radius</code> là bán kính hình tròn.</li>
+<li><code>width</code> là độ dày nét vẽ (tương tự hình chữ nhật).</li>
+</ul>
+<h3 id="ham-nay-dung-e-ve-hinh-elip">Hàm này dùng để vẽ hình elip</h3>
+<pre><code class="language-python">pygame.draw.ellipse(surface, color, rect, width) 
+</code></pre>
+<ul>
+<li><code>surface</code> là nơi để vẽ lên.</li>
+<li><code>color</code> là màu để vẽ.</li>
+<li><code>rect</code> là một tuple (hoặc list) gồm 4 phần tử là các thông số hình chữ nhật (như đã tìm hiểu ở phần trước). Hình elip được vẽ nội tiếp hình chữ nhật đó.</li>
+<li><code>width</code> là độ dày nét vẽ (tương tự hình chữ nhật).</li>
+</ul>
+<h3 id="ham-nay-dung-e-ve-a-giac">Hàm này dùng để vẽ đa giác</h3>
+<pre><code class="language-python">pygame.draw.polygon(surface, color, points, width) 
+</code></pre>
+<ul>
+<li><code>surface</code> là nơi để vẽ lên.</li>
+<li><code>color</code> là màu được vẽ.</li>
+<li><code>points</code> là tuple (hoặc list) thể hiện các đỉnh của đa giác. Mỗi đỉnh là một tuple (hoặc list) thể hiện toạ độ.</li>
+<li><code>width</code> là độ dày nét vẽ (tương tự hình chữ nhật).</li>
+</ul>
+<h3 id="ham-nay-dung-e-ve-mot-oan-thang">Hàm này dùng để vẽ một đoạn thẳng</h3>
+<pre><code class="language-python">pygame.draw.line(surface, color, start_pos, end_pos, width)
+</code></pre>
+<ul>
+<li><code>surface</code> là nơi để vẽ lên.</li>
+<li><code>color</code> là màu được vẽ.</li>
+<li><code>start_pos</code> là tuple (hoặc list) thể hiện toạ độ điểm đầu của đoạn thẳng.</li>
+<li><code>end_pos</code> là tuple (hoặc list) thể hiện toạ độ điểm cuối của đoạn thẳng.</li>
+<li><code>width</code> là độ dày nét vẽ.</li>
+</ul>
+<p>Các bạn lưu ý là các giá trị toạ độ hay độ dài là những số nguyên, đơn vị là <strong>pixel</strong>.</p>
+<h2 id="tao-chuyen-ong-trong-game">Tạo chuyển động trong game</h2>
+<p>Sau khi tìm hiểu qua một số hàm vẽ thì chúng ta đã vẽ được vài thứ lên màn hình. Bây giờ, các bạn sẽ tìm hiểu cách làm cho các hình ảnh ấy chuyển động. Các bạn chạy thử đoạn <strong>code</strong> này nhé, mình sẽ giải thích sau.</p>
+<pre><code class="language-python">import pygame, sys
+from pygame.locals import *
+
+WINDOWWIDTH = 400 # Chiều dài cửa sổ
+WINDOWHEIGHT = 300 # Chiều cao cửa sổ
+
+WHITE = (255, 255, 255)
+RED   = (255,   0,   0)
+GREEN = (  0, 255,   0)
+
+pygame.init()
+
+### Xác định FPS ###
+FPS = 60
+fpsClock = pygame.time.Clock()
+
+DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+pygame.display.set_caption('Animation')
+
+### Tạo surface và vẽ hình chiếc xe ###
+car_x = 0 # Hoành độ của xe
+carSurface = pygame.Surface((100, 50), SRCALPHA)
+pygame.draw.polygon(carSurface, RED, ((15, 0), (65, 0), (85, 15), (100, 15), (100, 40), (0, 40), (0, 15)))
+pygame.draw.circle(carSurface, GREEN, (15, 40), 10)
+pygame.draw.circle(carSurface, GREEN, (85, 40), 10)
+
+
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
+    DISPLAYSURF.fill(WHITE)
+    DISPLAYSURF.blit(carSurface, (car_x, 100))
+
+    ### Thay đổi vị trí xe ###
+    car_x += 2
+    if car_x + 100 &gt; WINDOWWIDTH:
+        car_x = WINDOWWIDTH - 100
+
+    pygame.display.update()
+    fpsClock.tick(FPS)
+</code></pre>
+<p>Các bạn chạy để xem kết quả nhé</p>
+<p>Trước khi tìm hiểu những dòng code thì các bạn cần biết thêm 1 khái niệm là <strong>FPS</strong> (<strong>F</strong>rames <strong>P</strong>er <strong>S</strong>econd). Hiểu theo nghĩa tiếng Việt thì <strong>FPS</strong> là số lượng khung hình trong <strong>1 giây</strong>. Ví dụ: nếu <strong>FPS</strong> là <strong>60</strong> thì trong <strong>1 giây</strong> sẽ có <strong>60 khung</strong> hình xuất hiện liên tiếp. Có thể ai cũng biết vòng lặp <strong>while</strong> chạy rất nhanh, trong <strong>1 giây</strong> sẽ lặp rất nhiều lần và tốc độ phụ thuộc vào nhiều yếu tố như <strong>code</strong> trong vòng lặp, <strong>CPU</strong>... Vì thế để đảm bảo <strong>game</strong> hoạt động ổn định thì cần phải thiết lập <strong>FPS</strong> để vòng lặp <strong>game</strong> thực hiện với tốc độ nhất định. Để thiết lập <strong>FPS</strong> thì các bạn hãy chú ý những dùng dòng <strong>code</strong> sau:</p>
+<p>Đặt 2 dòng này bên ngoài vòng lặp <strong>game</strong>, trường hợp này thì <strong>FPS</strong> là <strong>60</strong>:</p>
+<pre><code class="language-python">FPS = 60
+fpsClock = pygame.time.Clock()
+</code></pre>
+<p>Đặt dòng này ở cuối vòng lặp game:</p>
+<pre><code class="language-python">fpsClock.tick(FPS)
+</code></pre>
+<p>Các dòng <strong>code</strong> trên hoạt động thế nào thì các bạn có thể tự tìm hiểu thêm nhe!</p>
+<p>Bây giờ chúng ta hãy tìm hiểu những dòng <strong>code</strong> khác.</p>
+<pre><code class="language-python">### Tạo surface và vẽ hình chiếc xe
+car_x = 0 # Hoành độ của xe
+carSurface = pygame.Surface((100, 50), SRCALPHA)
+pygame.draw.polygon(carSurface, RED, ((15, 0), (65, 0), (85, 15), (100, 15), (100, 40), (0, 40), (0, 15)))
+pygame.draw.circle(carSurface, GREEN, (15, 40), 10)
+pygame.draw.circle(carSurface, GREEN, (85, 40), 10)
+</code></pre>
+<p>Những dòng <strong>code</strong> trên dùng để tạo một <code>surface</code> chứa hình chiếc xe. Biến <code>car_x</code> là hoành độ của chiếc xe, dựa vào biến này để vẽ chiếc xe, vì thế muốn thay đổi vị trí chiếc xe thì cần phải thay đổi biến này. Biến <code>carSurface</code> đại diện cho <strong>surface</strong> của chiếc xe, biến này được truyền vào các hàm vẽ phía dưới. Khi tạo <strong>surface</strong> thì có một điểm khác với phần trước là có thêm tham số <code>SRCALPHA</code> được truyền vào. <code>SRCALPHA</code> dùng để xác định đây là 1 <strong>surface</strong> có đặc tính trong suốt, nếu không có tham số này thì <strong>surface</strong> sẽ có 1 nền màu đen, các bạn có thể bỏ <code>SRCALPHA</code> và chạy lại để thấy sự khác biệt. Các hàm phía dưới dùng để vẽ các hình lên <code>carSurface</code> để tạo thành chiếc xe. Qua đây có thể thấy rõ lợi ích của việc dùng <strong>surface</strong>, <strong>surface</strong> được tạo bên ngoài vòng lặp <strong>game</strong> và được vẽ sẵn lên đó, vì thế trong vòng lặp <strong>game</strong> chỉ cần thay đổi vị trí cả <strong>surface</strong> mà không cần chỉnh lại từng hình đã vẽ.</p>
+<p>Bây giờ hãy nhìn vào bên trong vòng lặp <strong>game</strong> nhé!</p>
+<pre><code class="language-python">DISPLAYSURF.blit(carSurface, (car_x, 100))
+</code></pre>
+<p>Dòng <strong>code</strong> trên để vẽ chiếc xe (<code>carSurface</code>) lên cửa sổ (<code>DISPLAYSURF</code>). Vị trí vẽ có hoành độ là <code>car_x</code>, biến này sẽ được thay đổi để tạo chuyển động cho chiếc xe. Thay đổi thế nào thì xem đoạn <strong>code</strong> bên dưới nhe!</p>
+<pre><code class="language-python">### Thay đổi vị trí xe ###
+car_x += 2
+if car_x + 100 &gt; WINDOWWIDTH:
+    car_x = WINDOWWIDTH - 100
+</code></pre>
+<p>Sau mỗi vòng lặp thì hoành độ của chiếc xe tăng lên 2 <strong>pixel</strong>. Điều kiện trong <code>if</code> để cho chiếc xe không chạy ra ngoài màn hình, khi phần đầu của xe ra khỏi màn hình thì vẽ chiếc xe sát lại lề bên phải. Vậy là có thể tạo ra chuyển động cho chiếc xe rồi. Đơn giản quá đúng không nhỉ!!</p>
+<p>Sẵn đây mình cũng sẽ giới thiệu cho các bạn cách dùng <strong>class</strong> cho đoạn <strong>code</strong> chiếc xe. Việc dùng <strong>class</strong> sẽ giúp quản lý các đối tượng trong <strong>game</strong> dễ dàng hơn. Các bạn chạy thử đoạn <strong>code</strong> này nhe. Kết quả chạy thì cũng như trên thôi.</p>
+<pre><code class="language-python">import pygame, sys
+from pygame.locals import *
+
+WINDOWWIDTH = 400 # Chiều dài cửa sổ
+WINDOWHEIGHT = 300 # Chiều cao cửa sổ
+
+WHITE = (255, 255, 255)
+RED   = (255,   0,   0)
+GREEN = (  0, 255,   0)
+
+pygame.init()
+
+### Xác định FPS ###
+FPS = 60
+fpsClock = pygame.time.Clock()
+
+DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+pygame.display.set_caption('Animation')
+
+class Car():
+    def __init__(self):
+        self.x = 0 # Vị trí của xe
+
+        ## Tạo surface và vẽ hình chiếc xe lên đó ##
+        self.surface = pygame.Surface((100, 50), SRCALPHA)
+        pygame.draw.polygon(self.surface, RED, ((15, 0), (65, 0), (85, 15), (100, 15), (100, 40), (0, 40), (0, 15)))
+        pygame.draw.circle(self.surface, GREEN, (15, 40), 10)
+        pygame.draw.circle(self.surface, GREEN, (85, 40), 10)
+
+    def draw(self): # Hàm dùng để vẽ xe
+        DISPLAYSURF.blit(self.surface, (self.x, 100))
+
+    def update(self): # Hàm dùng để thay đổi vị trí xe
+        car_x += 2
+        if car_x + 100 &gt; WINDOWWIDTH:
+            car_x = WINDOWWIDTH - 100
+
+car = Car()
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
+    DISPLAYSURF.fill(WHITE)
+
+    car.draw()
+    car.update()
+
+    pygame.display.update()
+    fpsClock.tick(FPS)​
+</code></pre>
+<p>Có thể các bạn dễ nhận ra vị trí của xe (<code>self.x</code>) và suface của xe (<code>self.surface</code>) được tạo trong hàm khởi tạo <code>__init__</code>. Có 2 hàm là <code>draw</code> và <code>update</code> có tác dụng là vẽ và thay đổi vị trí của xe. Đây cũng là cấu trúc cơ bản của một đối tượng khi lập trình <strong>game</strong>. Tất nhiên là những đối tượng khác nhau có thể có những cấu trúc khác hơn, có những hàm đặc biệt hơn.</p>
+<h3 id="ve-chu">Vẽ chữ</h3>
+<p>Phần này cũng không quá phức tạp nên mình sẽ lướt nhanh nhé! Các bạn hãy chạy thử đoạn <strong>code</strong> và xem kết quả.</p>
+<pre><code class="language-python">import pygame, sys
+from pygame.locals import *
+
+WINDOWWIDTH = 400
+WINDOWHEIGHT = 300
+
+WHITE = (255, 255, 255)
+RED   = (255,   0,   0)
+GREEN = (  0, 255,   0)
+
+pygame.init()
+
+FPS = 60
+fpsClock = pygame.time.Clock()
+
+DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+pygame.display.set_caption('Text')
+
+font = pygame.font.SysFont('consolas', 30)
+textSurface = font.render('Hello world!', True, GREEN, RED)
+
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
+    DISPLAYSURF.fill(WHITE)
+    DISPLAYSURF.blit(textSurface, (50, 100))
+
+    pygame.display.update()
+    fpsClock.tick(FPS)
+</code></pre>
+<p>Trước tiên cần phải xác định <strong>font</strong> chữ cần vẽ. Dòng dưới đây để tạo <strong>font</strong> chữ:</p>
+<pre><code class="language-python">font = pygame.font.SysFont('consolas', 30)
+</code></pre>
+<p>Biến <code>font</code> dùng để đại diện cho <strong>font</strong> chữ đó, font <strong>được</strong> dùng là <strong>consolas</strong>, <strong>size</strong> chữ là <strong>30</strong>.</p>
+<p>Tiếp đến là tạo một <strong>suface</strong> và vẽ chữ lên đó. Dòng dưới này có nhiệm vụ đó:</p>
+<pre><code class="language-python">textSurface = font.render('Hello world!', True, GREEN, RED)
+</code></pre>
+<p>Tham số <code>Hello world!</code> là chữ cần vẽ. Tham số thứ 2 là <strong>True</strong>, cái này gọi là <strong>antialias</strong>, nếu giải thích kĩ thì khá dài dòng, hiểu đơn giản là nó sẽ làm "<strong>mềm</strong>" nét vẽ, các bạn có thể thử đổi thành <strong>False</strong> rồi chạy lại, kết quả cũng không quá khác biệt đâu. Tham số thứ 3 là màu chữ, ở đây là màu xanh. Tham số cuối là màu nền, ở đây là màu đỏ. Nếu không truyền vào tham số cuối thì chữ sẽ không có màu nền, các bạn có thể thử bỏ nó rồi chạy lại thử.</p>
+<h3 id="them-hinh-anh">Thêm hình ảnh</h3>
+<p>Trước giờ chúng là chỉ tạo ra những <strong>surface</strong> rồi vẽ hình lên đó. Tuy nhiên, có những hình phức tạp (một con <strong>mario</strong> chẳng hạn) thì không thể dùng các hàm để vẽ được, hoặc nếu vẽ được thì rất là phức tạp. Vì thế, người ta phải dùng những file hình ảnh có sẵn để thêm vào trong <strong>game</strong>. Nào, bây giờ hãy tìm hiểu cách để thêm hình ảnh vào. Để cho đơn giản thì mình sẽ dùng phần code chiếc xe ở phần trước. Mình sẽ thêm hình ảnh chiếc xe vào để thay thế cho các hàm vẽ.</p>
+<p>Trước hết chúng ta sẽ tìm hình 1 chiếc xe trước. Hình này mình lấy ở <a href="https://opengameart.org/">đây</a> và có chỉnh lại cho phù hợp với kích thước (<strong>100, 50</strong>). Chúng ta sẽ lưu <strong>file</strong> ảnh với tên <code>car.png</code> và đặt cùng thư mục với <strong>file code</strong>.</p>
+<p><img alt="Pygame" src="../../../Image/car.png" /></p>
+<p>Nào, bây giờ chúng ta đến phần <strong>code</strong>. Các bạn hãy chạy thử đoạn <strong>code</strong> này nhe!</p>
+<pre><code class="language-python">import pygame, sys
+from pygame.locals import *
+
+WINDOWWIDTH = 400 # Chiều dài cửa sổ
+WINDOWHEIGHT = 300 # Chiều cao cửa sổ
+
+WHITE = (255, 255, 255)
+RED   = (255,   0,   0)
+GREEN = (  0, 255,   0)
+
+pygame.init()
+
+### Xác định FPS ###
+FPS = 60
+fpsClock = pygame.time.Clock()
+
+DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+pygame.display.set_caption('Animation')
+
+class Car():
+    def __init__(self):
+        self.x = 0 # Vị trí của xe
+
+        ## Tạo surface và thêm hình chiếc xe vào ##
+        self.surface = pygame.image.load('car.png')
+
+    def draw(self): # Hàm dùng để vẽ xe
+        DISPLAYSURF.blit(self.surface, (self.x, 100))
+
+    def update(self): # Hàm dùng để thay đổi vị trí xe
+        self.x += 2
+        if self.x + 100 &gt; WINDOWWIDTH:
+            self.x = WINDOWWIDTH - 100
+
+car = Car()
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
+    DISPLAYSURF.fill(WHITE)
+
+    car.draw()
+    car.update()
+
+    pygame.display.update()
+    fpsClock.tick(FPS)
+</code></pre>
+<p>Kết quả là chiếc xe cũ đã được thay thành 1 hình khác, nhìn thú vị hơn đúng không!</p>
+<p>Nếu để ý kĩ thì <strong>code</strong> chỉ thay đổii một chút so với đoạn <strong>code</strong> cũ. Cụ thể trong hàm khởi tạo <code>__init__</code> của <strong>class</strong> <code>Car</code>, dòng tạo <strong>surface</strong> và các hàm vẽ được thay bằng dòng:</p>
+<pre><code class="language-python">self.surface = pygame.image.load('car.png')
+</code></pre>
+<p>Đây là dòng để thêm hình ảnh vào <strong>pygame.image.load()</strong> có tham số truyền vào là đường dẫn đến hình ảnh, ở đây do <strong>file</strong> ảnh cùng thư mục hiện tại nên không cần đường dẫn đầy đủ. Hàm này có kết quả trả về là một <strong>surface</strong>, vì thế có thể sử dụng biến <code>self.surface</code> như một <strong>surface</strong> bình thường.</p>
+<h3 id="su-kien">Sự kiện</h3>
+<p>Một <strong>game</strong> cần phải có sự tương tác với người chơi. Tất nhiên người chơi <strong>game</strong> thích điều khiển một chiếc xe hơn là xem nó tự chạy. Vì thế, chúng ta hãy tìm cách để có thể điều khiển được chiếc xe trong đoạn <strong>code</strong> trên nhe! Ý tưởng là thế này, khi nhấn giữ phím mũi tên trái thì chiếc xe chạy sang trái, khi ấn giữ phím mũi tên phải thì chiếc xe chạy sang phải, đơn giản thế thôi!</p>
+<p>Đoạn <strong>code</strong> sau đây sẽ thực hiện điều đó, các bạn hãy gõ vào và chạy thử nhé! À mà các bạn nhớ đặt file <code>car.png</code> lúc nãy vào cùng thư mục nhe!</p>
+<pre><code class="language-python">import pygame, sys
+from pygame.locals import *
+
+WINDOWWIDTH = 400 # Chiều dài cửa sổ
+WINDOWHEIGHT = 300 # Chiều cao cửa sổ
+
+WHITE = (255, 255, 255)
+RED   = (255,   0,   0)
+GREEN = (  0, 255,   0)
+
+pygame.init()
+
+### Xác định FPS ###
+FPS = 60
+fpsClock = pygame.time.Clock()
+
+DISPLAYSURF = pygame.display.set_mode((WINDOWWIDTH, WINDOWHEIGHT))
+pygame.display.set_caption('Event')
+
+class Car():
+    def __init__(self):
+        self.x = 100 # Vị trí của xe
+
+        ## Tạo surface và thêm hình chiếc xe vào ##
+        self.surface = pygame.image.load('car.png')
+
+    def draw(self): # Hàm dùng để vẽ xe
+        DISPLAYSURF.blit(self.surface, (self.x, 100))
+
+    def update(self, moveLeft, moveRight): # Hàm dùng để thay đổi vị trí xe
+        if moveLeft == True:
+            self.x -= 2
+        if moveRight == True:
+            self.x += 2
+
+        if self.x + 100 &gt; WINDOWWIDTH:
+            self.x = WINDOWWIDTH - 100
+        if self.x &lt; 0:
+            self.x = 0
+
+car = Car()
+moveLeft = False
+moveRight = False
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
+        if event.type == KEYDOWN:
+            if event.key == K_LEFT:
+                moveLeft = True
+            if event.key == K_RIGHT:
+                moveRight = True
+
+        if event.type == KEYUP:
+            if event.key == K_LEFT:
+                moveLeft = False
+            if event.key == K_RIGHT:
+                moveRight = False
+
+    DISPLAYSURF.fill(WHITE)
+
+    car.draw()
+    car.update(moveLeft, moveRight)
+
+    pygame.display.update()
+    fpsClock.tick(FPS)
+</code></pre>
+<p>Đây là kết quả, khi ấn giữ phím mũi tên trái thì xe chạy sang trái, khi ấn giữ phím mũi tên phải thì xe chạy sang phải ( các bạn tự chạy để xem kết quả)</p>
+<p>Phần này hơi phức tạp tí nên các bạn nhớ chú ý nhe!</p>
+<p>Bây giờ hãy nhìn vào hàm <code>update</code> của <strong>class</strong> <code>Car</code>.</p>
+<pre><code class="language-python">def update(self, moveLeft, moveRight): # Hàm dùng để thay đổi vị trí xe
+    if moveLeft == True:
+        self.x -= 2
+    if moveRight == True:
+        self.x += 2
+
+    if self.x + 100 &gt; WINDOWWIDTH:
+        self.x = WINDOWWIDTH - 100
+    if self.x &lt; 0:
+        self.x = 0
+</code></pre>
+<p>Có thêm 2 tham số đó là <code>moveLeft</code> và <code>moveRight</code> dùng để kiểm tra xem xe chạy sang trái, sang phải hay đứng im. Các dòng if khá đơn giản nên mình không giải thích nhiều về nó. Điều quan trọng ở đây là làm sao để điều chỉnh các tham số <code>moveLeft</code> và <code>moveRight</code> ứng với việc ấn phím mũi tên. Chúng ta hãy tìm hiểu những dòng <strong>code</strong> khác.</p>
+<p>Có thêm 2 biến được tạo bên ngoài vòng lặp <strong>game</strong>:</p>
+<pre><code class="language-python">moveLeft = False
+moveRight = False
+</code></pre>
+<p>Đây là 2 biến tương ứng được truyền vào <code>car.update(moveLeft, moveRight)</code>. Bây giờ, hãy chú ý đến phần bắt sự kiện bên trong vòng lặp <code>for</code>:</p>
+<pre><code class="language-python">if event.type == KEYDOWN:
+    if event.key == K_LEFT:
+        moveLeft = True
+    if event.key == K_RIGHT:
+        moveRight = True
+
+if event.type == KEYUP:
+    if event.key == K_LEFT:
+        moveLeft = False
+    if event.key == K_RIGHT:
+        moveRight = False
+</code></pre>
+<p>Dòng <code>if event.type == KEYDOWN:</code> để kiểm tra xem có xảy ra sự kiện <code>KEYDOWN</code> hay không. <code>KEYDOWN</code> là sự kiện xảy ra khi có 1 phím được ấn xuống. Các bạn lưu ý là sự kiện này chỉ xảy ra vào khoảnh khắc phím được ấn xuống, khi phím đang giữ thì sự kiện này không xảy ra nữa (trừ khi có phím khác được ấn). Nghe có vẻ khó hiểu đúng không, các bạn cố gắng nhe, hãy tìm hiểu thêm nhiều nguồn khác nhau để hiểu rõ hơn. Trong đoạn <code>if</code> đó thì có 2 dòng <code>if</code> nữa để kiểm tra phím được ấn là phím nào, dòng i<code>f event.key == K_LEFT:</code> để xem phím được ấn có phải là phím mũi tên trái hay không, nếu đúng thì gán cho <code>moveLeft = True</code> để xe chạy sang trái, tương tự thế đối với trường hợp nhấn phím mũi tên phải.</p>
+<p>Dòng <code>if event.type == KEYUP:</code> để kiểm tra xem có xảy ra sự kiện <code>KEYUP</code> hay không. <code>KEYUP</code> là sự kiện xảy ra khi có 1 phím được thả ra. Cũng tương tự như <code>KEYDOWN</code>, sự kiện <code>KEYUP</code> chỉ xảy ra vào khoảnh khắc phím được thả ra. Các đoạn <code>if</code> bên trong cũng tương tự phần trên. Khi phím mũi tên trái được thả ra thì <code>moveLeft = False</code> (xe không chạy sang trái nữa), tương tự đối với trường hợp phím mũi tên phải.</p>
+<p>Ngoài hai sự kiện <code>KEYDOWN</code> và <code>KEYUP</code> thì trong <strong>pygame</strong> còn rất nhiều sự kiện khác. Mình dùng hai sự kiện này để làm ví dụ về cách bắt sự kiện trong <strong>pygame</strong>, các sự kiện khác thì các bạn có thể tự tìm hiểu thêm hoặc mình sẽ giới thiệu trong từng bài hướng dẫn khác.</p>
+<h2 id="ket">Kết</h2>
+<p>Qua hai bài hướng dẫn, mình đã giới thiệu cho các bạn những phần cơ bản của <strong>pygame</strong> và lập trình <strong>game</strong>. Như mình đã nói từ trước, mình không thể hướng dẫn cho các bạn mọi thứ trong <strong>pygame</strong>. Điều quan trọng vẫn là khả năng tự tìm hiểu của các bạn. Trong bài hướng dẫn tiếp theo, mình sẽ cùng các bạn làm ra 1 game hoàn chỉnh. </p>
+<p>Bạn có thể tham khảo đoạn code đầy đủ <a href="/Scripts/Python/Pygame02.py">tại đây</a> và hình ảnh <a href="/Scripts/Python/car.png">car.png</a></p>
+<p><strong>Lưu ý</strong>: bạn nên <code>cd</code> vào thư mục chứa <strong>source code</strong> và có đầy đủ 02 file <code>Pygame02.py</code> &amp; <code>car.png</code> để chạy, nếu không sẽ báo lỗi không tìm thấy file <strong>car.png</strong></p>
+<ul>
+<li>https://codelearn.io/sharing/lap-trinh-game-co-ban-voi-pygame-p2</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>

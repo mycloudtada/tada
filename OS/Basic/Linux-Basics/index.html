@@ -1,0 +1,5310 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Lenh-Find-Trong-Linux/">
+      
+      
+        <link rel="next" href="../Linux-Nano-Vim/">
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>Một số lệnh Linux phổ biến được sử dụng trong DevOps: - Journey to Become a DevOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.35e1ed30.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#mot-so-lenh-linux-pho-bien-uoc-su-dung-trong-devops" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Journey to Become a DevOps" class="md-header__button md-logo" aria-label="Journey to Become a DevOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Journey to Become a DevOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Một số lệnh Linux phổ biến được sử dụng trong DevOps:
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Journey to Become a DevOps" class="md-nav__button md-logo" aria-label="Journey to Become a DevOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Journey to Become a DevOps
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Journey to Become a DevOps - Hành trình để trở thành DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CI CD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CI CD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CI-CD/GitHub-Actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai Container lên “Alibaba Cloud Container Service for Kubernetes” (ACK) bằng GitHub  Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CI-CD/Huong-dan-cau-hinh-du-an-thuc-te-Jenkins-CI-CD-Pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cấu hình dự án thực tế bằng Jenkins-CI-CD-Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CI-CD/Jenkins-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jenkins là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../CI-CD/Overview-CI-CD-Pipelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CI/CD Pipelines là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cloud Provider
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Provider
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/DevOps-Cloud-Provider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps Cloud Provider
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Overview-DevOps-The-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan DevOps và Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Alibaba Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Alibaba-Cloud-Pricing-Calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Alibaba Cloud Pricing Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Alibaba-Cloud-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/ApsaraVideo-VOD-Calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ApsaraVideo VOD là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Budget-Management-tren-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Billing Management trên Aliaba Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Elastic-Compute-Service-ECS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elastic Compute Service là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Object-Storage-Service-OSS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Object Storage Service là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Quan-Ly-RDS-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quản lý cơ sở dữ liệu (Database) RDS với Alibaba Cloud DMS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Resource-Access-Management-RAM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Resource Access Management (RAM) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Server-Migration-Center-SMC-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Server Migration Center (SMC) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Alibaba-Cloud/Ticket-Submit-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn gởi ticket trên Alibaba Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microsoft Azure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Microsoft Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Compute-Models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Compute Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Networking-Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Networking Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Storage-Models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Storage Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Securiy-Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securiy Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Cloud-Provider/Microsoft-Azure/Thuc-hanh-voi-Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuc hanh voi Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Containers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Cac-lua-chon-thay-the-Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các lựa chọn thay thế cho Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Cai-dat-Docker-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt Docker Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Containers-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containers là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-Compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Compose là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-Image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Image là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-Networking-Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Networking & Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-nang-cao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker nâng cao
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Docker-questions-and-answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Strapi-Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Strapi là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Thuc-hanh-voi-Docker-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Images & Thực hành với Docker Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers/Docker/Tim-hieu-Docker-Swarm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Swarm là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers Orchestration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Containers Orchestration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kubernetes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Kubernetes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/75-Cau-k8s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Top 75 Kubernetes Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Application-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai ứng dụng Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Helm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Helm là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Kubernetes-Cluster-Multi-Node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thiết lập Kubernetes Cluster Multi Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Kubernetes-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai Kubernetes Cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Kubernetes-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Kubernetes-platform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes Platform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các thành phần trong Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Kubespray/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt Kubernetes Cluster với Kubespray
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/Rancher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan về Rancher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Containers-Orchestration/Kubernetes/State-Ingress-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    State và Ingress trong Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IaC
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IaC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Loadbalancer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Roles & Deploying a Loadbalancer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Playbook-p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Playbooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Playbook-p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Playbooks (Continued)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Playbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Ansible-Tower-AWX-Vault/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Tower AWX Vault
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Configuration-Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quản lý cấu hình là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Docker-Containers-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Containers Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/HCL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HCL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Infrastructure-as-Code-IaC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure as Code (IaC) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Setup-Ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Tao-VM-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tao VM Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Terraform-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Terraform-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../IaC/Testing-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/DevOps-Cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bộ sưu tập các Cheatsheets dành cho DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/Public-DNS-Servers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Danh sách các Public DNS Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/Snapshot-Backup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapshot và Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Misc/Training-AlibabaCloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Academy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Networking
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Networking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/DevOps-Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps và Mạng máy tính
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/EVE-NG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EVE NG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Mo-hinh-7-lop-OSI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mô hình mạng 7 lớp OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Network-Automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tự động hóa mạng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Network-Protocols/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giao thức mạng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Python-Network-Automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập trình Python trong tự động hóa Network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/TCP-UDP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giao thức TCP và UDP là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Networking/Working-With-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working With Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            Basic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../DevOps-va-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mối liên hệ giữa DevOps và Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../File-System-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File System Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../HashiCorp-Vagrant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Vagrant và WSL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Install-Software-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài phần mềm trên Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Lenh-Find-Trong-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Câu lệnh Find trong Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    Một số lệnh Linux phổ biến được sử dụng trong DevOps:
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    Một số lệnh Linux phổ biến được sử dụng trong DevOps:
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux-la-gi" class="md-nav__link">
+    Linux là gì?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tinh-nang-vuot-troi-cua-linux" class="md-nav__link">
+    Tính năng vượt trội của Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lenh-co-ban-tren-linux" class="md-nav__link">
+    Lệnh cơ bản trên Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chi-tiet-nhung-cau-lenh-tren-linux-thuong-su-dung-trong-devops" class="md-nav__link">
+    Chi tiết những câu lệnh trên Linux thường sử dụng trong DevOps
+  </a>
+  
+    <nav class="md-nav" aria-label="Chi tiết những câu lệnh trên Linux thường sử dụng trong DevOps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lenh-ls" class="md-nav__link">
+    Lệnh ls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-sudo" class="md-nav__link">
+    Lệnh sudo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-cat" class="md-nav__link">
+    Lệnh cat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-grep" class="md-nav__link">
+    Lệnh grep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-sort" class="md-nav__link">
+    Lệnh sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-tail" class="md-nav__link">
+    Lệnh tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-chown" class="md-nav__link">
+    Lệnh chown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-chmod" class="md-nav__link">
+    Lệnh chmod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-lsof" class="md-nav__link">
+    Lệnh lsof
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-ifconfig" class="md-nav__link">
+    Lệnh ifconfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-id" class="md-nav__link">
+    Lệnh id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-cut" class="md-nav__link">
+    Lệnh cut
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-sed" class="md-nav__link">
+    Lệnh sed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-diff" class="md-nav__link">
+    Lệnh diff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-history" class="md-nav__link">
+    Lệnh history
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-dd" class="md-nav__link">
+    Lệnh dd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-find" class="md-nav__link">
+    Lệnh find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-free" class="md-nav__link">
+    Lệnh free
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-ssh-keygen" class="md-nav__link">
+    Lệnh ssh-keygen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-ip" class="md-nav__link">
+    Lệnh ip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-nslookup" class="md-nav__link">
+    Lệnh nslookup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-curl" class="md-nav__link">
+    Lệnh curl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-tr" class="md-nav__link">
+    Lệnh tr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-iptables" class="md-nav__link">
+    Lệnh iptables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-apt-get" class="md-nav__link">
+    Lệnh apt-get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-df-du" class="md-nav__link">
+    Lệnh df, du
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-htop" class="md-nav__link">
+    Lệnh htop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-ps" class="md-nav__link">
+    Lệnh ps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-kill" class="md-nav__link">
+    Lệnh kill
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-telnet" class="md-nav__link">
+    Lệnh telnet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mot-so-lenh-cua-cac-phan-mem-tren-linux" class="md-nav__link">
+    Một số lệnh của các phần mềm trên Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mot-so-lenh-danh-cho-docker" class="md-nav__link">
+    Một số lệnh dành cho Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mot-so-lenh-danh-cho-kubernetes" class="md-nav__link">
+    Một số lệnh dành cho Kubernetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tham-khao" class="md-nav__link">
+    Tham khảo
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux-Nano-Vim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Nano và Vim trên Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../SSH-Webserver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSH Webserver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Tu-Dong-Hoa-Voi-Bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tu Dong Hoa Voi Bash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ubuntu-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Làm việc trên Ubuntu Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Vagrant-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vagrant là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/DevOps-Agile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devops và Agile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/DevOps-Lifecycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vòng đời DevOps - Tập trung vào ứng dụng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/DevOps-Roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap để trở thành DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/DevOps-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/Microservices-Monolith-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microservices, Monolith với Devops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Overview/Quy-Trinh-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy trình của DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" >
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming Langguage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Programming Langguage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Ngon-Ngu-Lap-Trinh-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ngôn ngữ lập trình với DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/YAML/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    YAML là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GoLang
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_3">
+            <span class="md-nav__icon md-icon"></span>
+            GoLang
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/GoLang/Bien-Hang-So-Go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biến, hằng số & kiểu dữ liệu trong Go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/GoLang/DevOps-Va-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GoLang là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/GoLang/Go-Nhan-Gia-Tri-Bien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go nhận giá trị đầu vào
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/GoLang/Go-Workspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go Workspace là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/GoLang/Hello-World-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chương trình đầu tiên với Go: Hello World
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/GoLang/Twitter-Voi-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ứng dụng GoLang với Twitter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_4">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Automation-with-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automation with Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Bat-Dau-Voi-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Build-an-App-in-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build an App in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Caro-LAN-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Cờ Caro Qua Mạng LAN Bằng Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Collision-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xử Lý Va Chạm Trong Game Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Flappy-Bird-Pygame-v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Flappybird Với Python version 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Flappy-Bird-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Flappy Bird với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Game-Space-Invaders-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Làm Game Space Invaders Bằng Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Introduction-to-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Introduction to Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Python-4-Concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Python Loops, functions, modules and libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Python-Data-Structures-OOP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Python Data Structures and OOP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Python-Debugging-Testing-Regular/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python: Debugging, Testing and Regular expression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Python-Pygame01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Cơ Bản Với Pygame - Phần 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Python-Pygame02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Cơ Bản Với Pygame - Phần 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Racing-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Đua Xe Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Scrolling-Background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cuộn Nền Trong Game Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Snake-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Rắn Săn Mồi Với Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Programming-Langguage/Python/Web-development-in-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web development in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1">
+            <span class="md-nav__icon md-icon"></span>
+            Containers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1_1" id="__nav_12_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Elasticsearch logstash kibana
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_12_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Elasticsearch logstash kibana
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Scripts/Containers/elasticsearch-logstash-kibana/ELK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ELK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Version Control
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Version Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Advanced-vi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git nâng cao (Tiếng Việt)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git Advanced
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Co-Ban/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git cơ bản
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Setup-Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt & Cấu hình Git trên Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt & Cấu hình Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git-Version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git - Quản lý phiên bản
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/GitHub-GitLab-BitBucket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Khám phá GitHub | GitLab | BitBucket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Quy-Trinh-Lam-Viec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy trình làm việc với mã nguồn mở
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../Version-Control/Staging-Changing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Staging & Changing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#linux-la-gi" class="md-nav__link">
+    Linux là gì?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tinh-nang-vuot-troi-cua-linux" class="md-nav__link">
+    Tính năng vượt trội của Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#lenh-co-ban-tren-linux" class="md-nav__link">
+    Lệnh cơ bản trên Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#chi-tiet-nhung-cau-lenh-tren-linux-thuong-su-dung-trong-devops" class="md-nav__link">
+    Chi tiết những câu lệnh trên Linux thường sử dụng trong DevOps
+  </a>
+  
+    <nav class="md-nav" aria-label="Chi tiết những câu lệnh trên Linux thường sử dụng trong DevOps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#lenh-ls" class="md-nav__link">
+    Lệnh ls
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-sudo" class="md-nav__link">
+    Lệnh sudo
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-cat" class="md-nav__link">
+    Lệnh cat
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-grep" class="md-nav__link">
+    Lệnh grep
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-sort" class="md-nav__link">
+    Lệnh sort
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-tail" class="md-nav__link">
+    Lệnh tail
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-chown" class="md-nav__link">
+    Lệnh chown
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-chmod" class="md-nav__link">
+    Lệnh chmod
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-lsof" class="md-nav__link">
+    Lệnh lsof
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-ifconfig" class="md-nav__link">
+    Lệnh ifconfig
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-id" class="md-nav__link">
+    Lệnh id
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-cut" class="md-nav__link">
+    Lệnh cut
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-sed" class="md-nav__link">
+    Lệnh sed
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-diff" class="md-nav__link">
+    Lệnh diff
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-history" class="md-nav__link">
+    Lệnh history
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-dd" class="md-nav__link">
+    Lệnh dd
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-find" class="md-nav__link">
+    Lệnh find
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-free" class="md-nav__link">
+    Lệnh free
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-ssh-keygen" class="md-nav__link">
+    Lệnh ssh-keygen
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-ip" class="md-nav__link">
+    Lệnh ip
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-nslookup" class="md-nav__link">
+    Lệnh nslookup
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-curl" class="md-nav__link">
+    Lệnh curl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-tr" class="md-nav__link">
+    Lệnh tr
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-iptables" class="md-nav__link">
+    Lệnh iptables
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-apt-get" class="md-nav__link">
+    Lệnh apt-get
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-df-du" class="md-nav__link">
+    Lệnh df, du
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-htop" class="md-nav__link">
+    Lệnh htop
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-ps" class="md-nav__link">
+    Lệnh ps
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-kill" class="md-nav__link">
+    Lệnh kill
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#lenh-telnet" class="md-nav__link">
+    Lệnh telnet
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mot-so-lenh-cua-cac-phan-mem-tren-linux" class="md-nav__link">
+    Một số lệnh của các phần mềm trên Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mot-so-lenh-danh-cho-docker" class="md-nav__link">
+    Một số lệnh dành cho Docker
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#mot-so-lenh-danh-cho-kubernetes" class="md-nav__link">
+    Một số lệnh dành cho Kubernetes
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tham-khao" class="md-nav__link">
+    Tham khảo
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="mot-so-lenh-linux-pho-bien-uoc-su-dung-trong-devops">Một số lệnh Linux phổ biến được sử dụng trong DevOps:</h1>
+<h2 id="linux-la-gi">Linux là gì?</h2>
+<p><strong>Linux</strong> là một hệ điều hành mã nguồn mở và miễn phí được phát triển bởi <strong>Linus Torvalds</strong> vào năm <strong>1991</strong>. <strong>Linux</strong> là một hệ điều hành đa nhiệm, có nghĩa là nó có thể chạy nhiều chương trình cùng một lúc. <strong>Linux</strong> cũng là một hệ điều hành linh hoạt, có thể được cài đặt trên nhiều loại thiết bị, bao gồm máy tính để bàn, máy chủ, máy tính xách tay, máy tính bảng và điện thoại thông minh.</p>
+<p><strong>Linux</strong> được biết đến với tính bảo mật, hiệu suất và tính linh hoạt của nó. <strong>Linux</strong> cũng là một hệ điều hành phổ biến đối với các nhà phát triển phần mềm, vì nó có thể được sử dụng để tạo ra các ứng dụng có hiệu suất cao và bảo mật.</p>
+<h2 id="tinh-nang-vuot-troi-cua-linux">Tính năng vượt trội của Linux</h2>
+<p><strong>Linux</strong> có nhiều tính năng vượt trội so với các hệ điều hành khác, bao gồm:</p>
+<ul>
+<li><strong>Linh hoạt</strong>: Linux có thể được tùy chỉnh để phù hợp với nhiều nhu cầu khác nhau.</li>
+<li><strong>Mạnh mẽ</strong>: Linux có thể chạy trên nhiều loại phần cứng, từ máy tính để bàn đến máy chủ.</li>
+<li><strong>An toàn</strong>: Linux được thiết kế để bảo mật và chống lại các cuộc tấn công.</li>
+<li><strong>Miễn phí</strong>: Linux là một hệ điều hành miễn phí, có nghĩa là bạn có thể sử dụng nó và sửa đổi nó mà không phải trả bất kỳ khoản phí nào.</li>
+</ul>
+<h2 id="lenh-co-ban-tren-linux">Lệnh cơ bản trên Linux</h2>
+<ul>
+<li>wget: Lệnh này được sử dụng để tải xuống các tệp từ internet.</li>
+<li>curl: Lệnh này cũng được sử dụng để tải xuống các tệp từ internet, nhưng nó có nhiều tính năng hơn lệnh wget.</li>
+<li>tar: Lệnh này được sử dụng để giải nén các tệp đã được nén.</li>
+<li>zip: Lệnh này được sử dụng để nén các tệp.</li>
+<li>ssh: Lệnh này được sử dụng để kết nối với các máy tính từ xa.</li>
+<li>scp: Lệnh này được sử dụng để sao chép các tệp giữa các máy tính từ xa.</li>
+<li>rsync: Lệnh này cũng được sử dụng để sao chép các tệp giữa các máy tính từ xa, nhưng nó có nhiều tính năng hơn lệnh scp.</li>
+<li>grep: Lệnh này được sử dụng để tìm kiếm các chuỗi văn bản trong các tệp.</li>
+<li>find: Lệnh này được sử dụng để tìm các tệp trong một thư mục.</li>
+<li>sed: Lệnh này chỉnh sửa văn bản trong một tệp.</li>
+<li>awk: Lệnh này xử lý văn bản trong một tệp theo cách được xác định trước.</li>
+<li>sort: Lệnh này được sử dụng để sắp xếp các tệp theo thứ tự.</li>
+<li>uniq: Lệnh này được sử dụng để loại bỏ các bản sao của các dòng trong một tệp.</li>
+<li>wc: Lệnh này được sử dụng để đếm số lượng dòng, từ và byte trong một tệp.</li>
+<li>ls: Lệnh này liệt kê các tệp và thư mục trong thư mục hiện tại.</li>
+<li>cd: Lệnh này thay đổi thư mục hiện tại.</li>
+<li>cp: Lệnh này sao chép một tệp hoặc thư mục.</li>
+<li>mkdir: Lệnh này tạo một thư mục mới.</li>
+<li>mv: Lệnh này di chuyển hoặc đổi tên một tệp hoặc thư mục.</li>
+<li>rm: Lệnh này xóa một tệp hoặc thư mục.</li>
+</ul>
+<h2 id="chi-tiet-nhung-cau-lenh-tren-linux-thuong-su-dung-trong-devops">Chi tiết những câu lệnh trên Linux thường sử dụng trong DevOps</h2>
+<p>Sau đây sẽ là những câu lệnh trên <strong>Linux</strong> thường sử dụng trong công việc của <strong>DevOps</strong>.</p>
+<h3 id="lenh-ls">Lệnh ls</h3>
+<p>Câu lệnh này sẽ liệt kê toàn bộ nội dung tại thư mục đang làm việc.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>ls &lt;option&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Câu lệnh</th>
+<th>Chi tiết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ls &lt;đường dẫn&gt;</td>
+<td>Liệt kê các nội dung đang được lưu trữ bên trong đường dẫn chỉ định.</td>
+</tr>
+<tr>
+<td>ls -l</td>
+<td>Liệt kê toàn bộ nội dung có trong thư mục kèm theo các trường thông tin như người sở hữu, các quyền trên nội dung, thời gian chỉnh sửa gần nhất.</td>
+</tr>
+<tr>
+<td>ls -a</td>
+<td>Liệt kê toàn bộ nội dung bên trong thư mục, bao gồm các tập tin ẩn.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenh-sudo">Lệnh sudo</h3>
+<p>Thực thi câu lệnh kèm theo với quyền <code>root</code> / <code>superuser</code>.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>sudo - execute a command as another user
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Câu lệnh</th>
+<th>Chi tiết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sudo useradd <username></td>
+<td>Thêm mới user vào hệ thống.</td>
+</tr>
+<tr>
+<td>sudo passwd <username></td>
+<td>Thiết lập mật khẩu cho user.</td>
+</tr>
+<tr>
+<td>sudo userdel <username></td>
+<td>Xóa user ra khỏi hệ thống.</td>
+</tr>
+<tr>
+<td>sudo groupadd <groupname></td>
+<td>Thêm mới group vào hệ thống.</td>
+</tr>
+<tr>
+<td>sudo groupdel <groupname></td>
+<td>Xóa group ra khỏi hệ thống.</td>
+</tr>
+<tr>
+<td>sudo usermod -g <groupname> <username></td>
+<td>Thêm user vào một group primary.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenh-cat">Lệnh cat</h3>
+<p>Câu lệnh này sẽ giúp người dùng có thể đọc, điều chỉnh hoặc ghép các tập tin định dạng <strong>text</strong>.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>cat &lt;option&gt; &lt;tên file&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Câu lệnh</th>
+<th>Chi tiết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cat -b</td>
+<td>Đánh số thứ tự cho các dòng có ký tự.</td>
+</tr>
+<tr>
+<td>cat -n</td>
+<td>Đánh số thứ tự cho toàn bộ các dòng trong tập tin.</td>
+</tr>
+<tr>
+<td>cat -s</td>
+<td>Gộp những dòng không có ký tự lại thành 1 dòng.</td>
+</tr>
+<tr>
+<td>cat -E</td>
+<td>Hiển thị dấu $ ở cuối dùng.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenh-grep">Lệnh grep</h3>
+<p>Câu lệnh này sẽ giúp người dùng có thể tìm kiếm một từ khóa hoặc một đoạn từ khóa trong một tập tin. Tương tự chức năng <code>Ctrl + F</code> nhưng thực thi bằng <strong>CLI</strong>.</p>
+<p><strong>Cú pháp:</strong> </p>
+<pre><code>grep &lt;option hoặc từ khóa cần tìm&gt; &lt;tên file&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Câu lệnh</th>
+<th>Chi tiết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>grep -i</td>
+<td>Hiện thị kết quả tìm kiếm không phân biệt in hoa và in thường.</td>
+</tr>
+<tr>
+<td>grep -n</td>
+<td>Hiển thị kết quả tìm kiếm cùng với số thứ tự của dòng.</td>
+</tr>
+<tr>
+<td>grep -v</td>
+<td>Hiển thị kết quả những dòng không giống với cụm từ cần tìm.</td>
+</tr>
+<tr>
+<td>grep -c</td>
+<td>Hiển thị số lượng dòng trùng khớp với cụm từ cần tìm.</td>
+</tr>
+</tbody>
+</table>
+<p>Trong thực tế, <code>grep</code> thường được lồng ghép với các câu lệnh liệt kê thông tin để lọc kết quả cần hiển thị. Ví dụ như bạn cần tìm <code>PID</code> của tiến trình <strong>python</strong> đang hoạt động trong hệ thống, thì sẽ gõ câu lệnh như sau: <code>ps ux | grep python</code></p>
+<h3 id="lenh-sort">Lệnh sort</h3>
+<p>Câu lệnh này sẽ sắp xếp kết quả tìm kiếm theo thứ tự alphabet hoặc theo số tăng dần. Ngoài ra, câu lệnh này cũng sẽ sắp xếp tập tin, nội dung tập tin và thư mục.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>sort &lt;option&gt; &lt;tên file&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Câu lệnh</th>
+<th>Chi tiết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sort -r</td>
+<td>Đảo ngược kết quả sắp xếp.</td>
+</tr>
+<tr>
+<td>sort -f</td>
+<td>Sắp xếp kết quả không phân biệt chữ hoa và thường.</td>
+</tr>
+<tr>
+<td>sort -n</td>
+<td>Sắp xếp kết quả dựa theo số tăng dần.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenh-tail">Lệnh tail</h3>
+<p>Câu lệnh này mặc định sẽ hiển thị 10 dòng cuối cùng của tập tin được chỉ định ra màn hình. Người dùng cũng có thể xem cùng lúc nội dung của nhiều tập tin.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>tail &lt;option&gt; &lt;tên file&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Câu lệnh</th>
+<th>Chi tiết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>tail -n</td>
+<td>Hiển thị n dòng kết quả cuối cùng của tập tin.</td>
+</tr>
+<tr>
+<td>tail +<số></td>
+<td>Hiển thị kết quả từ dòng <số>.</td>
+</tr>
+<tr>
+<td>tail -c <số></td>
+<td>Hiển thị <số> byte cuối cùng từ tập tin được chỉ định.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenh-chown">Lệnh chown</h3>
+<p>Lệnh này được sử dụng để thay đổi <strong>user</strong> hoặc nhóm sở hữu tập tin hoặc thư mục. Bất cứ khi nào bạn muốn thay đổi quyền sở hữu, bạn có thể sử dụng lệnh <code>chown</code>.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>chown &lt;option&gt;… &lt;OWNER&gt;&lt;:[GROUP]&gt; &lt;tên file&gt;…
+chown &lt;option&gt;… –reference=RFILE &lt;tên file&gt;…
+</code></pre>
+<h3 id="lenh-chmod">Lệnh chmod</h3>
+<p>Lệnh này được sử dụng để thay đổi quyền truy cập của các tập tin và thư mục.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>chmod &lt;quyền của user,group,"khác"&gt; &lt;tên file&gt;
+</code></pre>
+<p><strong>Quyền</strong></p>
+<ul>
+<li>7 Đọc, ghi  và thực thi (read, write, execute).</li>
+<li>6 Đọc và ghi.</li>
+<li>5 Đọc và thực thi.</li>
+<li>4 Chỉ đọc.</li>
+<li>3 Ghi và thực thi.</li>
+<li>2 Chỉ ghi.</li>
+<li>1 Chỉ thực thi.</li>
+<li>0 Không phân quyền.</li>
+</ul>
+<h3 id="lenh-lsof">Lệnh lsof</h3>
+<p><strong>lsof</strong> hay còn gọi là “<strong>list open files</strong>“, dùng để liệt kê thông tin về các tập tin trên hệ thống đang hoặc đã được mở bởi các tiến trình đang hoạt động.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>lsof &lt;option&gt; &lt;username&gt;
+</code></pre>
+<p>Kết quả sẽ hiển thị với các cột có các nội dung tương ứng như sau:</p>
+<table>
+<thead>
+<tr>
+<th>Cột</th>
+<th>Chú thích</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>COMMAND</td>
+<td>9 kí tự đầu tiên của tên chương trình lệnh tương ứng với tiến trình.</td>
+</tr>
+<tr>
+<td>PID</td>
+<td>Thông tin PID của tiến trình.</td>
+</tr>
+<tr>
+<td>USER</td>
+<td>User thực thi tiến trình đó. Có thể là UID hoặc username.</td>
+</tr>
+<tr>
+<td>FD</td>
+<td>File Descriptor của tập tin được liệt kê, hoặc các thông tin khác hay mode (w,u,r) của tập tin.</td>
+</tr>
+<tr>
+<td></td>
+<td>cwd : là thư mục đang hoạt động của tiến trình.</td>
+</tr>
+<tr>
+<td></td>
+<td>txt : program text (code và data).</td>
+</tr>
+<tr>
+<td></td>
+<td>mmap : tập tin memory-mapped.</td>
+</tr>
+<tr>
+<td></td>
+<td>rtd : root directory (thư mục root).</td>
+</tr>
+<tr>
+<td></td>
+<td>DEL : Linux map tập tin đã bị xoá.</td>
+</tr>
+<tr>
+<td></td>
+<td>w : đang truy cập ghi xuống dữ liệu.</td>
+</tr>
+<tr>
+<td></td>
+<td>u : đang truy cập ghi và đọc dữ liệu.</td>
+</tr>
+<tr>
+<td></td>
+<td>r : đang truy cập đọc dữ liệu.</td>
+</tr>
+<tr>
+<td>TYPE</td>
+<td></td>
+</tr>
+<tr>
+<td></td>
+<td>REG : tập tin thông thường</td>
+</tr>
+<tr>
+<td></td>
+<td>sock : socket.</td>
+</tr>
+<tr>
+<td></td>
+<td>ipv4/ipv6 : socket IPv4/v6.</td>
+</tr>
+<tr>
+<td></td>
+<td>DIR : thư mục.</td>
+</tr>
+<tr>
+<td>DEVICE</td>
+<td>Số đại diện của thiết bị như partition mà tập tin thuộc về.</td>
+</tr>
+<tr>
+<td>SIZE/OFF</td>
+<td>Dung lượng của tập tin.</td>
+</tr>
+<tr>
+<td>NODE</td>
+<td>Số node của tập tin.</td>
+</tr>
+<tr>
+<td>NAME</td>
+<td>Tên tập tin.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ví dụ:</strong></p>
+<pre><code>[root@Devops ~]# lsof
+COMMAND   PID            USER    FD      TYPE             DEVICE    SIZE/OFF     NODE NAME
+lsof      28207          root    0u      CHR              136,0       0t0          3 /dev/pts/0
+lsof      28207          root    1u      CHR              136,0       0t0          3 /dev/pts/0
+lsof      28207          root    2u      CHR              136,0       0t0          3 /dev/pts/0
+lsof      28207          root    3r      DIR                0,3         0          1 /proc
+lsof      28207          root    4r      DIR                0,3         0     231727 /proc/28207/fd
+lsof      28207          root    5w     FIFO                0,9       0t0     231732 pipe
+lsof      28207          root    6r     FIFO                0,9       0t0     231733 pipe
+lsof      28208          root  cwd       DIR                8,2      4096    2097217 /root
+lsof      28208          root  rtd       DIR                8,2       263         64 /
+lsof      28208          root  txt       REG                8,2    154184    6505411 /usr/sbin/lsof
+...
+</code></pre>
+<h3 id="lenh-ifconfig">Lệnh ifconfig</h3>
+<p><code>ifconfig</code> (<strong>interface configuration</strong>) là một trong những câu lệnh dùng để xem nhanh các địa chỉ <strong>IP</strong> và các thông tin khác của giao diện mạng (<strong>interface</strong>). Gõ ifconfig để xem trạng thái các <strong>interface</strong> hiện đang hoạt động, trong đó bao gồm tên, tình trạng thông tin địa chỉ IP, địa chỉ <strong>MAC</strong>. Bạn cũng có thể chỉ định tên một <strong>interface</strong> cần xem thông tin thay vì xem toàn bộ.</p>
+<p><strong>Cú pháp:</strong> </p>
+<pre><code>ifconfig &lt;option&gt; &lt;interface&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Câu lệnh</th>
+<th>Chi tiết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ifconfig -a</td>
+<td>Liệt kê toàn bộ thông tin interface có trên hệ thống, kể cả chúng đã bị “tắt”.</td>
+</tr>
+<tr>
+<td>ifconfig -s</td>
+<td>Liệt kê tóm tắt thông tin interface trên hệ thống</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenh-id">Lệnh id</h3>
+<p>Câu lệnh này sẽ liệt kê các thông tin (<strong>name, group,…</strong>) của <strong>user</strong> hiện tại hoặc <strong>user</strong> được chỉ định trên <strong>server</strong>.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>id &lt;option&gt; &lt;username&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Câu lệnh</th>
+<th>Chi tiết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id -g <username></td>
+<td>Liệt kê group ID của user được chỉ định.</td>
+</tr>
+<tr>
+<td>id -G <username></td>
+<td>Liệt kê toàn bộ group ID mà user “tham gia”.</td>
+</tr>
+<tr>
+<td>id -n <username></td>
+<td>Liệt kê tên của user được chỉ định thay vì ID.</td>
+</tr>
+<tr>
+<td>id -r <username></td>
+<td>Liệt kê real ID  của user được chỉ định.</td>
+</tr>
+<tr>
+<td>id -u <username></td>
+<td>Hiển thị user ID của user được chỉ định.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenh-cut">Lệnh cut</h3>
+<p>Câu lệnh này được sử dụng thao tác với tệp dựa trên cột và được thiết kế để trích xuất các cột cụ thể.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>cut -c&lt;số thứ tự cột đầu tiên - số thứ tự cột cuối cùng&gt; &lt;tên file&gt;
+</code></pre>
+<p><strong>Ví dụ:</strong> Cần cắt 16 ký tự đầu tiên từ tập tin tập <em>tin.txt</em>:</p>
+<pre><code>[root@DevOps ~]# cat file.txt
+Roses are red, Violets are blue,
+Sugar is sweet, And so are you.
+[root@DevOps ~]# cut -c 1-16 file.txt
+Roses are red, V
+Sugar is sweet,
+</code></pre>
+<h3 id="lenh-sed">Lệnh sed</h3>
+<p>Ngoài việc lọc kết quả từ cụm từ khóa mà người dùng chỉ định, câu lệnh còn hỗ trợ người dùng thay thế các từ khóa đầu tiên xuất hiện trong mỗi dòng (hoặc tất cả) mà nó tìm thấy trong tập tin văn bản được chỉ định, và hiển thị kết quả ra màn hình.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>sed 's/&lt;từ cần tìm&gt;/&lt;từ thay thế&gt;/' &lt;tên tập tin&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Câu lệnh</th>
+<th>Chi tiết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sed ‘s/<từ cần tìm>/<từ thay thế>/’ <tên tập tin></td>
+<td>Thay thế chuỗi đầu tiên xuất hiện trong mỗi dòng từ tập tin được chỉ định</td>
+</tr>
+<tr>
+<td>sed ‘s/<từ cần tìm>/<từ thay thế>/g’ <tên tập tin></td>
+<td>Thay thế tất cả các lần xuất hiện trong mỗi dòng từ tập tin được chỉ định</td>
+</tr>
+<tr>
+<td>sed ‘1,3s/<từ cần tìm>/<từ thay thế>/g’ <tên tập tin></td>
+<td>Thay thế tất cả các lần xuất hiện chuỗi trong một loạt các dòng từ tập tin được chỉ định</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ví dụ:</strong></p>
+<pre><code>[root@DevOps ~]# cat test.txt
+Hello Student 
+[root@DevOps ~]# sed 's/Student/STUDENT/' test.txt
+Hello STUDENT
+</code></pre>
+<h3 id="lenh-diff">Lệnh diff</h3>
+<p>Câu lệnh này sẽ so sánh và hiển thị sự khác nhau giữa 2 tập tin chỉ định.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>diff &lt;option&gt; &lt;tên file 1&gt; &lt;tên file 2&gt;
+</code></pre>
+<p>Một vài tuỳ chọn (<em>option</em>) được dùng thường xuyên gồm:</p>
+<table>
+<thead>
+<tr>
+<th>Câu lệnh</th>
+<th>Chi tiết</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c</td>
+<td>Cung cấp 3 dòng trước và sau của sự khác nhau về nội dung.</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>Sử dụng để so sánh đệ quy các thư mục con, thư mục hiện tại.</td>
+</tr>
+<tr>
+<td>-i</td>
+<td>Bỏ qua trường hợp chữ cái.</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>Bỏ qua sự khác biệt về tab ( khoảng trắng ).</td>
+</tr>
+<tr>
+<td>-q</td>
+<td>Báo những tệp khác nhau mà không cần liệt kê sự khác biệt.</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Ví dụ:</strong></p>
+<pre><code>[root@DevOps ~]# cat test1.txt
+this is the original text
+line2
+line3
+line4
+happy hacking !
+[root@DevOps ~]# cat test2.txt
+this is the original text
+line2
+line4
+happy hacking !
+GNU is not UNIX
+[root@DevOps ~]#diff test1.txt test2.txt
+3d2
+&lt; line3 
+6c5 
+&gt; GNU is not UNIX
+</code></pre>
+<h3 id="lenh-history">Lệnh history</h3>
+<p>Câu lệnh <code>history</code> được sử dụng để xem các lệnh đã thực hiện trước đó.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>history &lt;số lượng câu lệnh cần hiển thị - mặc định sẽ hiển thị toàn bộ&gt;
+</code></pre>
+<p>Bạn cũng có thể sử dụng ký hiệu ! với lệnh <code>history</code> để lấy số thứ tự của một câu lệnh cụ thể. Ví dụ, để lấy số thứ tự của câu lệnh <code>ls</code>, bạn có thể sử dụng lệnh <code>!ls</code>.</p>
+<h3 id="lenh-dd">Lệnh dd</h3>
+<p>Câu lệnh này sử dụng trong các trường hợp sau:</p>
+<ul>
+<li>Sao lưu và phục hồi toàn bộ dữ liệu ổ cứng hoặc một partition</li>
+<li>Chuyển đổi định dạng dữ liệu từ ASCII sang EBCDIC hoặc ngược lại</li>
+<li>Sao lưu lại MBR trong máy (MBR là một tập tin dữ liệu rất quan trong nó chứa các lệnh để LILO hoặc GRUB nạp hệ điều hành)</li>
+<li>Chuyển đổi chữ thường sang chữ hoa và ngược lại</li>
+<li>Tạo một tập tin với kích cỡ cố định</li>
+<li>Tạo một tập tin ISO</li>
+</ul>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>dd if=&lt;địa chỉ đầu vào&gt; of=&lt;địa chỉ đầu ra&gt; &lt;option&gt;
+</code></pre>
+<p><strong>Trong đó:</strong></p>
+<ul>
+<li>if= địa chỉ nguồn của dữ liệu nó sẽ bắt đầu đọc</li>
+<li>of= viết đầu ra của tập tin</li>
+<li>option : các tùy chọn cho câu lệnh</li>
+</ul>
+<p><strong>Ý nghĩa các tham số:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tùy chọn</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bs=Bytes</td>
+<td>Quá trình đọc (ghi) bao nhiêu byte một lần đọc (ghi)</td>
+</tr>
+<tr>
+<td>cbs=Bytes</td>
+<td>Chuyển đổi bao nhiêu byte một lần</td>
+</tr>
+<tr>
+<td>count=Blocks</td>
+<td>Thực hiện bao nhiêu Block trong quá trình thực thi câu lệnh</td>
+</tr>
+<tr>
+<td>if</td>
+<td>Chỉ đường dẫn đọc đầu vào</td>
+</tr>
+<tr>
+<td>of</td>
+<td>Chỉ đường dẫn ghi đầu ra</td>
+</tr>
+<tr>
+<td>ibs=bytes</td>
+<td>Chỉ ra số byte một lần đọc</td>
+</tr>
+<tr>
+<td>obs=bytes</td>
+<td>Chỉ ra số byte một lần ghi</td>
+</tr>
+<tr>
+<td>skip=blocks</td>
+<td>Bỏ qua bao nhiêu block đầu vào</td>
+</tr>
+<tr>
+<td>conv=Convs</td>
+<td>Chỉ ra tác vụ cụ thể của câu lệnh</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Các tùy chọn (option) của conv</strong></p>
+<table>
+<thead>
+<tr>
+<th>Tùy chọn</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ascii</td>
+<td>Chuyển đôi từ mã EBCDIC sáng ASCII</td>
+</tr>
+<tr>
+<td>ebcdic</td>
+<td>Chuyển đổi từ mã ASCII sang EBCDIC</td>
+</tr>
+<tr>
+<td>lcase</td>
+<td>Chuyển đổi từ chữ thường lên hết thành chữ in hoa</td>
+</tr>
+<tr>
+<td>ucase</td>
+<td>Chuyển đổi từ chữ in hoa sang chữ thường</td>
+</tr>
+<tr>
+<td>nocreat</td>
+<td>Không tạo ra tập tin đầu ra</td>
+</tr>
+<tr>
+<td>noerror</td>
+<td>Tiếp tục sao chép dữ liệu khi đầu vào bị lỗi</td>
+</tr>
+<tr>
+<td>sync</td>
+<td>Đồng bộ dữ liệu với ổ đang sao chép sang</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Lưu ý</strong>:  Mặc định nó được tính theo đơn vị là kb. Bạn có thể thêm một số trường sau để báo định dạng khác:</p>
+<ul>
+<li>c = 1 byte</li>
+<li>w = 2 byte</li>
+<li>b = 512 byte</li>
+<li>kB = 1000 byte</li>
+<li>K = 1024 byte</li>
+<li>MB = 1000000 byte</li>
+<li>M = (1024 * 1024) byte</li>
+<li>GB = (1000 * 1000 * 1000) byte</li>
+<li>G = (1024 * 1024 * 1024) byte</li>
+</ul>
+<p>Ngoài ra, người dùng có thể sử dụng câu lệnh này để kiểm tra tốc độ đọc/ghi ổ cứng hiện tại của server:</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>dd if=/dev/zero of=test bs=64k count=16k conv=fdatasync
+</code></pre>
+<h3 id="lenh-find">Lệnh find</h3>
+<p>Lệnh <code>find</code> được sử dụng để tìm kiếm và định vị danh sách các tập tin và thư mục dựa trên các điều kiện bạn chỉ định cho các tệp khớp với các đối số cần tìm: tên tập tin, tên thư mục, phân quyền, owner, groups,…</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>find &lt;vị trí con trỏ bắt đầu tìm kiếm&gt; &lt;đối số cần tìm&gt; &lt;option&gt; &lt;từ khóa cần tìm&gt;
+</code></pre>
+<h3 id="lenh-free">Lệnh free</h3>
+<p>Câu lệnh này sẽ cung cấp thông tin về dung lượng bộ nhớ đã sử dụng và chưa sử dụng, kèm theo đó là thông tin về dung lượng <strong>RAM</strong> ảo <strong>SWAP</strong>.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>free &lt;option&gt;
+</code></pre>
+<p>Các tùy chọn (option) thường dùng</p>
+<table>
+<thead>
+<tr>
+<th>Tùy chọn</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-b</td>
+<td>Hiển thị kết quả theo dung lượng byte</td>
+</tr>
+<tr>
+<td>-k</td>
+<td>Hiển thị kết quả theo dung lượng kilobyte (mặc định)</td>
+</tr>
+<tr>
+<td>-m</td>
+<td>Hiển thị kết quả theo dung lượng megabyte</td>
+</tr>
+<tr>
+<td>-g</td>
+<td>Hiển thị kết quả theo dung lượng gigabyte</td>
+</tr>
+</tbody>
+</table>
+<p>Ý nghĩa các cột trong kết quả hiển thị</p>
+<table>
+<thead>
+<tr>
+<th>Cột</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>total</td>
+<td>Tổng dung lượng bộ nhớ hiện có trên thiết bị</td>
+</tr>
+<tr>
+<td>used</td>
+<td>Dung lượng bộ nhớ đang sử dụng</td>
+</tr>
+<tr>
+<td>free</td>
+<td>Dung lượng bộ nhớ còn trống</td>
+</tr>
+<tr>
+<td>shared</td>
+<td>Dung lượng bộ nhớ được sử dụng bởi tmpfs</td>
+</tr>
+<tr>
+<td>buffers</td>
+<td>Dung lượng bộ nhớ được sử dụng bởi kernel buffer</td>
+</tr>
+<tr>
+<td>cache</td>
+<td>Dung lượng bộ nhớ được sử dụng bởi page cache và slab</td>
+</tr>
+<tr>
+<td>buffers/cache</td>
+<td>Tổng dung lượng buffer và cache đang sử dụng</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenh-ssh-keygen">Lệnh ssh-keygen</h3>
+<p>Sử dụng lệnh <code>ssh-keygen</code> để tạo cặp khóa xác thực <strong>public/private</strong>, giúp người dùng kết nối với hệ thống từ xa mà không cần cung cấp mật khẩu. Các khóa phải được tạo riêng cho từng người dùng. Nếu bạn tạo các cặp khóa xác thực là với quyền user root thì chỉ user root mới có thể sử dụng các khóa đã tạo.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>ssh-keygen -t &lt;option&gt;
+</code></pre>
+<p>Các option thường sử dụng bao gồm:</p>
+<ul>
+<li>rsa1</li>
+<li>dsa</li>
+<li>ecdsa</li>
+<li>rsa</li>
+</ul>
+<p>Để tránh việc khóa xác thực bị tin tặc (<em>hacker</em>) chiếm đoạn và sử dụng, người dùng sẽ được yêu cầu nhập mật khẩu để sử dụng khóa xác thực trong bước tạo khóa. Điều này giúp hạn chế được việc tin tặc lấy được khóa xác thực và chiếm toàn bộ quyền trên server.</p>
+<h3 id="lenh-ip">Lệnh ip</h3>
+<p>Câu lệnh này thuộc gói <code>net-tools</code> được cài đặt trên <strong>Linux</strong>, giúp người dùng có thể thao tác, quản trị hệ thống mạng trên thiết bị. Có chức năng gần như tương tự với câu lệnh <code>ifconfig</code>: hiển thị thông số, điều chỉnh các giao diện mạng (<strong>interface</strong>).</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>ip &lt;option&gt; &lt;các đối tượng mạng trên hệ thống&gt; &lt;COMMAND | help&gt;
+</code></pre>
+<p>Các tùy chọn (<em>option</em>) thường dùng</p>
+<table>
+<thead>
+<tr>
+<th>Tùy chọn</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>address</td>
+<td>Hiển thị toàn bộ thông tin của các interface hiện có trên thiết bị</td>
+</tr>
+<tr>
+<td>link</td>
+<td>Hiển thị địa chỉ MAC của các interface hiện có trên thiết bị</td>
+</tr>
+<tr>
+<td>route</td>
+<td>Hiển thị thông tin định tuyến</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenh-nslookup">Lệnh nslookup</h3>
+<p><code>nslookup</code> được sử dụng để truy vấn các <strong>Internet Domain Name Servers (DNS)</strong>. <code>Nslookup</code> có hai chế độ: tương tác (<strong>interactive</strong>) và không tương tác (<strong>non-interactive</strong>). Chế độ tương tác cho phép người dùng truy vấn các tên máy chủ để biết thông tin về các máy chủ và tên miền khác nhau hoặc để in danh sách các máy chủ trong một miền. Chế độ không tương tác được sử dụng để chỉ in tên và thông tin được yêu cầu cho máy chủ lưu trữ hoặc tên miền.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>nsloopkup &lt;đường dẫn cần kiểm tra&gt;
+</code></pre>
+<p><strong>Ví dụ:</strong></p>
+<pre><code>root@vinahost:~/devops# nslookup
+&gt; google.com
+Server:         127.0.0.53
+Address:        127.0.0.53#53
+
+Non-authoritative answer:
+Name:   google.com
+Address: 74.125.68.102
+Name:   google.com
+Address: 74.125.68.100
+Name:   google.com
+Address: 74.125.68.101
+Name:   google.com
+Address: 74.125.68.139
+Name:   google.com
+Address: 74.125.68.138
+Name:   google.com
+Address: 74.125.68.113
+Name:   google.com
+Address: 2404:6800:4003:c06::66
+Name:   google.com
+Address: 2404:6800:4003:c06::8b
+Name:   google.com
+Address: 2404:6800:4003:c06::65
+Name:   google.com
+Address: 2404:6800:4003:c06::64
+&gt;
+</code></pre>
+<p>Để cài trên <strong>Red Hat Linux</strong>/ <strong>CentOS</strong> sử dụng lệnh</p>
+<pre><code>dnf install bind-utils
+</code></pre>
+<p>hoặc</p>
+<pre><code>dnf install bind-utils
+</code></pre>
+<p>Để cài trên <strong>Debian/Ubuntu</strong> sử dụng lệnh</p>
+<pre><code>apt install dnsutils
+</code></pre>
+<h3 id="lenh-curl">Lệnh curl</h3>
+<p>Một trong những điều cơ bản nhất bạn có thể làm với <code>curl</code> là tải xuống một trang web hoặc tập tin.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>curl &lt;option&gt; &lt;đường dẫn / URL&gt;
+</code></pre>
+<p>Nếu bạn muốn lưu kết quả sau khi “curl” được thì chỉ cần thêm option “-o <tên tập tin>” vào trước URL để lưu kết quả vào tập tin mong muốn. Ví dụ:</p>
+<pre><code>curl -o hello.zip ftp://speedtest.tele2.net/1MB.zip
+</code></pre>
+<h3 id="lenh-tr">Lệnh tr</h3>
+<p>Câu lệnh này được sử dụng trên hệ điều hành <strong>Linux</strong> giúp người dùng có thể thay đổi hoặc xóa các ký tự.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>tr &lt;option&gt; &lt;set1&gt; &lt;set2&gt;
+</code></pre>
+<p><strong>Ví dụ:</strong> Bạn cần thay đổi các ký tự trong tập tin từ chữ thường sang chữ hoa</p>
+<pre><code>[root@DevOps ~]# cat test.txt
+devops
+[root@DevOps ~]# cat test.txt | tr [:lower:] [:upper:]
+DEVOPS
+</code></pre>
+<p>Các tùy chọn (<em>option</em>) thường dùng</p>
+<table>
+<thead>
+<tr>
+<th>Tùy chọn</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-c</td>
+<td>Áp dụng các option khác đối với các ký tự không có trong bộ lọc “set1”</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>Xóa ký tự trong chuỗi</td>
+</tr>
+<tr>
+<td>-s</td>
+<td>Bỏ các ký tự lặp liên tiếp</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenh-iptables">Lệnh iptables</h3>
+<p><code>iptables</code> là ứng dụng tường lửa miễn phí trong <strong>Linux</strong>, cho phép thiết lập các quy tắc riêng để kiểm soát truy cập, tăng tính bảo mật cho hệ thống. Về cơ bản, <code>iptables</code> chỉ là giao diện dòng lệnh để tương tác với <strong>packet filtering</strong> của <strong>netfilter framework</strong>. Trong đó:</p>
+<ul>
+<li>Table: được iptables sử dụng để định nghĩa các rule(quy tắc) dành cho các gói tin.</li>
+<li>Chain: được tạo ra với một số lượng nhất định ứng với mỗi Table, giúp lọc gói tin tại các điểm khác nhau.</li>
+<li>Rule: các điều kiện ứng với các loại gói tin.</li>
+<li>Tagert: có thể được hiểu là hành động dành cho các gói tin khi gói tin thỏa mãn các rule đã quy định.</li>
+<li>Policy: cơ chế mặc định đối với các trường hợp gói tin không trùng khớp với các Chain hiện có.</li>
+</ul>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>iptables --table TABLE -A/-C/-D... CHAIN rule --jump Target
+</code></pre>
+<h3 id="lenh-apt-get">Lệnh apt-get</h3>
+<p><code>apt-get</code> là một công cụ <strong>command-line</strong> giúp xử lý các gói cài đặt trong <strong>Debian/Ubuntu</strong>. Nhiệm vụ chính của nó là lấy thông tin và các gói từ các nguồn được xác thực để cài đặt, nâng cấp và loại bỏ các gói cài đặt và các thành phần kèm theo của chúng. <strong>APT</strong> là viết tắt của <strong>Advanced Packaging Tool</strong>.</p>
+<pre><code>apt-get &lt;option&gt; command
+</code></pre>
+<p><code>apt-get update</code>: lệnh này được sử dụng để đồng bộ hóa các tệp chỉ mục gói cài đặt từ các nguồn của chúng một lần nữa. Người dùng cần thực hiện cập nhật trước khi nâng cấp các gói cài đặt trên hệ thống của mình.</p>
+<h3 id="lenh-df-du">Lệnh df, du</h3>
+<p>Lệnh <code>df</code> (<strong>disk free</strong>) hiển thị tình trạng dung lượng ổ đĩa trống đang được sử dụng bởi các tập tin của hệ thống. Lệnh <code>du</code> (<strong>disk usage</strong>) tình trạng dung lượng của cây thư mục bao gồm tất cả nội dung của chúng và kích thước của các tệp riêng lẻ. Công cụ này giúp người dùng có thể quản lý được tài nguyên đang sử dụng trên hệ thống, giảm tình thiểu tình trạng hệ thống thiếu hụt tài nguyên.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>df -h 
+du -h
+</code></pre>
+<h3 id="lenh-htop">Lệnh htop</h3>
+<p>Đây là công cụ giúp người dùng có thể theo các tiến trình đang hoạt động trên hệ thống, tổng quan các tài nguyên của hệ thống như <strong>CPU</strong>, lượng <strong>RAM</strong> và <strong>Swap</strong> sử dụng theo thời gian thực (<strong>real-time</strong>).</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>htop &lt;option&gt;
+</code></pre>
+<p>Các tùy chọn (<em>option</em>) thường dùng:</p>
+<table>
+<thead>
+<tr>
+<th>Tùy chọn</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>–d / –delay</td>
+<td>Hiển thị độ trễ giữa các bản cập nhật, tính bằng 1/10 giây</td>
+</tr>
+<tr>
+<td>–C / –no-color</td>
+<td>Chế độ đơn sắc</td>
+</tr>
+<tr>
+<td>–h / –help</td>
+<td>Hiển thị thông báo trợ giúp và thoát</td>
+</tr>
+<tr>
+<td>–u / –user=USERNAME</td>
+<td>Chỉ hiển thị các PID đã chỉ định</td>
+</tr>
+<tr>
+<td>–v / –version</td>
+<td>Hiển thị thông tin phiên bản và thoát</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenh-ps">Lệnh ps</h3>
+<p>Câu lệnh này sẽ hiển thị danh sách các tiến trình đang hoạt động trên hệ thống.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>ps &lt;option&gt;
+</code></pre>
+<p>Các tùy chọn (<em>option</em>) thường dùng:</p>
+<table>
+<thead>
+<tr>
+<th>Tùy chọn</th>
+<th>Ý nghĩa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td>Hiển thị tất cả các tiến trình của toàn bộ user trên hệ thống</td>
+</tr>
+<tr>
+<td>u</td>
+<td>Hiển thị người khởi tạo tiến trình</td>
+</tr>
+<tr>
+<td>x</td>
+<td>Hiển thị các tiến trình không attach terminal</td>
+</tr>
+</tbody>
+</table>
+<h3 id="lenh-kill">Lệnh kill</h3>
+<p>Lệnh <code>kill</code> có thể được dùng để ngắt một hoặc nhiều tiến trình đang hoạt động trên hệ thống.</p>
+<p><strong>Cú pháp:</strong></p>
+<pre><code>kill &lt;option&gt; &lt;ID của tiến trình&gt;
+</code></pre>
+<h3 id="lenh-telnet">Lệnh telnet</h3>
+<p><code>Telnet</code> là một giao thức mạng (<strong>network protocol</strong>) và cũng là công cụ quản trị server từ xa thông qua <strong>command line</strong>. <strong>TELNET</strong> (viết tắt của <strong>TErminaL NETwork</strong>) được dùng phổ biến trong mạng máy tính cục bộ (<strong>LAN</strong>). Ngoài ra, bạn có thể sử dụng câu lệnh này để kiểm tra <strong>TCP</strong> port của server hiện có đang mở hay không.</p>
+<p>Cú pháp: </p>
+<pre><code>telnet &lt;hostname / địa chỉ ip&gt;
+</code></pre>
+<h2 id="mot-so-lenh-cua-cac-phan-mem-tren-linux">Một số lệnh của các phần mềm trên Linux</h2>
+<ul>
+<li>pip install: Tải xuống và cài đặt một gói phần mềm Python.</li>
+<li>npm install: Tải xuống và cài đặt một gói phần mềm JavaScript.</li>
+<li>composer install: Tải xuống và cài đặt một gói phần mềm PHP.</li>
+<li>gradlew build: Xây dựng một dự án Gradle.</li>
+<li>maven install: Xây dựng một dự án Maven.</li>
+<li>sbt compile: Xây dựng một dự án SBT.</li>
+</ul>
+<h2 id="mot-so-lenh-danh-cho-docker">Một số lệnh dành cho Docker</h2>
+<ul>
+<li>docker run: Chạy một container Docker.</li>
+<li>docker build: Xây dựng một hình ảnh Docker từ một tệp Dockerfile.</li>
+<li>docker push: Đẩy một hình ảnh Docker lên kho lưu trữ Docker.</li>
+<li>docker pull: Kéo một hình ảnh Docker từ kho lưu trữ Docker.</li>
+<li>docker stop: Dừng một container Docker đang chạy.</li>
+<li>docker start: Khởi động lại một container Docker đã dừng.</li>
+<li>docker rm: Xóa một container Docker.</li>
+<li>docker images: Liệt kê tất cả các hình ảnh Docker.</li>
+<li>docker ps: Liệt kê tất cả các container Docker đang chạy.</li>
+<li>docker logs: Xem nhật ký của một container Docker.</li>
+<li>docker network ls: Liệt kê tất cả các mạng Docker.</li>
+<li>docker volume ls: Liệt kê tất cả các khối lượng Docker.</li>
+<li>docker compose up: Chạy một ứng dụng Docker từ tệp docker-compose.yml.</li>
+</ul>
+<h2 id="mot-so-lenh-danh-cho-kubernetes">Một số lệnh dành cho Kubernetes</h2>
+<ul>
+<li>kubectl create deployment: Tạo một triển khai Kubernetes.</li>
+<li>kubectl scale deployment: Thay đổi quy mô một triển khai Kubernetes.</li>
+<li>kubectl rollout restart deployment: Khởi động lại một triển khai Kubernetes.</li>
+<li>kubectl get pods: Lấy danh sách các pod Kubernetes.</li>
+<li>kubectl logs pod: Lấy nhật ký của một pod Kubernetes.</li>
+<li>kubectl describe pod: Mô tả chi tiết về một pod Kubernetes.</li>
+<li>kubectl get services: Lấy danh sách các dịch vụ Kubernetes.</li>
+<li>kubectl expose deployment: Tạo một dịch vụ cho một triển khai Kubernetes.</li>
+<li>kubectl get nodes: Lấy danh sách các nút Kubernetes.</li>
+<li>kubectl get nodes -o wide: Lấy danh sách các nút Kubernetes với thông tin chi tiết.</li>
+<li>kubectl get cluster-autoscaler: Lấy trạng thái của trình tự mở rộng cụm Kubernetes.</li>
+<li>kubectl get pods --all-namespaces: Lấy danh sách tất cả các pod Kubernetes trong tất cả các không gian tên.</li>
+<li>kubectl logs pod --all-namespaces: Lấy nhật ký của tất cả các pod Kubernetes trong tất cả các không gian tên.</li>
+<li>kubectl describe pod --all-namespaces: Mô tả chi tiết về tất cả các pod Kubernetes trong tất cả các không gian tên.</li>
+<li>kubectl get services --all-namespaces: Lấy danh sách tất cả các dịch vụ Kubernetes trong tất cả các không gian tên.</li>
+<li>kubectl expose deployment --all-namespaces: Tạo một dịch vụ cho một triển khai Kubernetes trong tất cả các không gian tên.</li>
+<li>kubectl get nodes --all-namespaces: Lấy danh sách tất cả các nút Kubernetes trong tất cả các không gian tên.</li>
+<li>kubectl get nodes --all-namespaces -o wide: Lấy danh sách tất cả các nút Kubernetes trong tất cả các không gian tên với thông tin chi tiết.</li>
+<li>kubectl get cluster-autoscaler --all-namespaces: Lấy trạng thái của trình tự mở rộng cụm Kubernetes trong tất cả các không gian tên.</li>
+</ul>
+<p>Trường hợp cần thông tin chi tiết, các bạn có thể sử dụng lệnh <em>man</em> để có thêm thông tin của các lệnh tương ứng, cấu trúc lệnh man <command></p>
+<pre><code>man ls
+</code></pre>
+<p>Đây chỉ là một số lệnh Linux phổ biến được sử dụng trong DevOps. Có nhiều lệnh khác có thể được sử dụng, tùy thuộc vào các nhiệm vụ cụ thể mà bạn đang thực hiện.</p>
+<h2 id="tham-khao">Tham khảo</h2>
+<ul>
+<li>https://github.com/trinib/Linux-Bash-Commands</li>
+<li>https://github.com/sk3pp3r/cheat-sheet-pdf</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../../..", "features": [], "search": "../../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>

@@ -1,0 +1,4556 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      
+        <link rel="prev" href="../Ngon-Ngu-Lap-Trinh-DevOps/">
+      
+      
+        <link rel="next" href="../GoLang/Bien-Hang-So-Go/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.5.3, mkdocs-material-9.4.6">
+    
+    
+      
+        <title>YAML là gì? - Journey to Become a DevOps</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.35e1ed30.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#yaml-la-gi" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Journey to Become a DevOps" class="md-header__button md-logo" aria-label="Journey to Become a DevOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Journey to Become a DevOps
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              YAML là gì?
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Journey to Become a DevOps" class="md-nav__button md-logo" aria-label="Journey to Become a DevOps" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    Journey to Become a DevOps
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Journey to Become a DevOps - Hành trình để trở thành DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    CI CD
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            CI CD
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CI-CD/GitHub-Actions/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai Container lên “Alibaba Cloud Container Service for Kubernetes” (ACK) bằng GitHub  Actions
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CI-CD/Huong-dan-cau-hinh-du-an-thuc-te-Jenkins-CI-CD-Pipeline/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cấu hình dự án thực tế bằng Jenkins-CI-CD-Pipeline
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CI-CD/Jenkins-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Jenkins là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../CI-CD/Overview-CI-CD-Pipelines/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    CI/CD Pipelines là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Cloud Provider
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            Cloud Provider
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/DevOps-Cloud-Provider/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps Cloud Provider
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Overview-DevOps-The-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan DevOps và Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            Alibaba Cloud
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Alibaba-Cloud-Pricing-Calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Alibaba Cloud Pricing Calculator
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Alibaba-Cloud-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/ApsaraVideo-VOD-Calculator/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ApsaraVideo VOD là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Budget-Management-tren-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Billing Management trên Aliaba Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Elastic-Compute-Service-ECS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Elastic Compute Service là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Object-Storage-Service-OSS/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Object Storage Service là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Quan-Ly-RDS-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quản lý cơ sở dữ liệu (Database) RDS với Alibaba Cloud DMS
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Resource-Access-Management-RAM/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Resource Access Management (RAM) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Server-Migration-Center-SMC-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Server Migration Center (SMC) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Alibaba-Cloud/Ticket-Submit-Alibaba-Cloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn gởi ticket trên Alibaba Cloud
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Microsoft Azure
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            Microsoft Azure
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Compute-Models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Compute Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Networking-Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Networking Management
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure-Storage-Models/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure Storage Models
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Microsoft-Azure/Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Microsoft-Azure/Securiy-Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Securiy Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Cloud-Provider/Microsoft-Azure/Thuc-hanh-voi-Microsoft-Azure/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thuc hanh voi Microsoft Azure
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            Containers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Docker
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            Docker
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Cac-lua-chon-thay-the-Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các lựa chọn thay thế cho Docker
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Cai-dat-Docker-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt Docker Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Containers-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Containers là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Docker-Compose/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Compose là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Docker-Image/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Image là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Docker-Networking-Security/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Networking & Security
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Docker-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Docker-nang-cao/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker nâng cao
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Docker-questions-and-answers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Strapi-Docker/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Strapi là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Thuc-hanh-voi-Docker-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Images & Thực hành với Docker Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers/Docker/Tim-hieu-Docker-Swarm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Swarm là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers Orchestration
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            Containers Orchestration
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Kubernetes
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            Kubernetes
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/75-Cau-k8s/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Top 75 Kubernetes Questions and Answers
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Application-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai ứng dụng Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Helm/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Helm là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Kubernetes-Cluster-Multi-Node/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Thiết lập Kubernetes Cluster Multi Node
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Kubernetes-cluster/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Triển khai Kubernetes Cluster
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Kubernetes-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Kubernetes-platform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Kubernetes Platform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Các thành phần trong Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Kubespray/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt Kubernetes Cluster với Kubespray
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/Rancher/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tổng quan về Rancher
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Containers-Orchestration/Kubernetes/State-Ingress-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    State và Ingress trong Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    IaC
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            IaC
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Ansible-Config/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Config
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Ansible-Loadbalancer/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Using Roles & Deploying a Loadbalancer
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Ansible-Playbook-p1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Playbooks
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Ansible-Playbook-p2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Playbooks (Continued)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Ansible-Playbook/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Ansible-Tower-AWX-Vault/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ansible Tower AWX Vault
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Configuration-Management/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quản lý cấu hình là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Docker-Containers-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Docker Containers Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/HCL/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    HCL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Infrastructure-as-Code-IaC/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Infrastructure as Code (IaC) là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Setup-Ansible/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Setup Ansible
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Tao-VM-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tao VM Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Terraform-Kubernetes/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform Kubernetes
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Terraform-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Terraform là gì?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IaC/Testing-Terraform/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Testing Terraform
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Misc
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            Misc
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/DevOps-Cheatsheet/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Bộ sưu tập các Cheatsheets dành cho DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Public-DNS-Servers/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Danh sách các Public DNS Server
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Snapshot-Backup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Snapshot và Backup
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Misc/Training-AlibabaCloud/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Alibaba Cloud Academy
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Networking
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            Networking
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/DevOps-Networking/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps và Mạng máy tính
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/EVE-NG/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    EVE NG
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/Mo-hinh-7-lop-OSI/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mô hình mạng 7 lớp OSI
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/Network-Automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tự động hóa mạng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/Network-Protocols/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giao thức mạng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/Python-Network-Automation/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập trình Python trong tự động hóa Network
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/TCP-UDP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Giao thức TCP và UDP là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Networking/Working-With-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Working With Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9" >
+        
+          
+          <label class="md-nav__link" for="__nav_9" id="__nav_9_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    OS
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_9_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9">
+            <span class="md-nav__icon md-icon"></span>
+            OS
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_9_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_9_1" id="__nav_9_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Basic
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_9_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_9_1">
+            <span class="md-nav__icon md-icon"></span>
+            Basic
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/DevOps-va-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Mối liên hệ giữa DevOps và Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/File-System-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File System Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/HashiCorp-Vagrant/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Vagrant và WSL
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Install-Software-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài phần mềm trên Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Lenh-Find-Trong-Linux/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Câu lệnh Find trong Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Linux-Basics/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Một số lệnh Linux phổ biến được sử dụng trong DevOps:
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Linux-Nano-Vim/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn sử dụng Nano và Vim trên Linux
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/SSH-Webserver/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    SSH Webserver
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Tu-Dong-Hoa-Voi-Bash/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Tu Dong Hoa Voi Bash
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Ubuntu-Desktop/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Làm việc trên Ubuntu Desktop
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../OS/Basic/Vagrant-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vagrant là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_10" >
+        
+          
+          <label class="md-nav__link" for="__nav_10" id="__nav_10_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Overview
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_10_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_10">
+            <span class="md-nav__icon md-icon"></span>
+            Overview
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/DevOps-Agile/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Devops và Agile
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/DevOps-Lifecycle/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Vòng đời DevOps - Tập trung vào ứng dụng
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/DevOps-Roadmap/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Roadmap để trở thành DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/DevOps-la-gi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    DevOps là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/Microservices-Monolith-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Microservices, Monolith với Devops
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Overview/Quy-Trinh-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy trình của DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_11" id="__nav_11_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Programming Langguage
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_11_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_11">
+            <span class="md-nav__icon md-icon"></span>
+            Programming Langguage
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Ngon-Ngu-Lap-Trinh-DevOps/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ngôn ngữ lập trình với DevOps
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    YAML là gì?
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    YAML là gì?
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uu-iem-cua-yaml" class="md-nav__link">
+    Ưu điểm của YAML:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-sanh-yaml-voi-json-va-xml" class="md-nav__link">
+    So sánh YAML với JSON và XML
+  </a>
+  
+    <nav class="md-nav" aria-label="So sánh YAML với JSON và XML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#so-sanh-xml-voi-yaml" class="md-nav__link">
+    So sánh XML với YAML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so-sanh-json-voi-yaml" class="md-nav__link">
+    So sánh JSON với YAML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cac-tinh-nang-co-ban-cua-yaml" class="md-nav__link">
+    Các tính năng cơ bản của YAML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cu-phap-yaml" class="md-nav__link">
+    Cú pháp YAML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yaml-co-the-lam-uoc-gi-khac" class="md-nav__link">
+    YAML có thể làm được gì khác?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cac-vi-du-su-dung-yaml" class="md-nav__link">
+    Các ví dụ sử dụng YAML
+  </a>
+  
+    <nav class="md-nav" aria-label="Các ví dụ sử dụng YAML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-su-dung-kieu-du-lieu-trong-yaml" class="md-nav__link">
+    Cách sử dụng kiểu dữ liệu trong YAML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-dung-gia-tri-boolean" class="md-nav__link">
+    Sử dụng giá trị Boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tao-list-trong-ngon-ngu-yaml" class="md-nav__link">
+    Tạo list trong ngôn ngữ YAML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bien-trong-ngon-ngu-yaml" class="md-nav__link">
+    Biến trong ngôn ngữ YAML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-dung-chuoi" class="md-nav__link">
+    Sử dụng chuỗi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cac-gia-tri-lap-lai" class="md-nav__link">
+    Các giá trị lặp lại
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-dung-dau" class="md-nav__link">
+    Sử dung dấu ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-dung-array" class="md-nav__link">
+    Sử dụng array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ket-hop-ngon-ngu-yaml-voi-markdown" class="md-nav__link">
+    Kết hợp ngôn ngữ YAML với Markdown
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oc-1-file-yaml-su-dung-ngon-ngu-lap-trinh" class="md-nav__link">
+    Đọc 1 file YAML sử dụng ngôn ngữ lập trình
+  </a>
+  
+    <nav class="md-nav" aria-label="Đọc 1 file YAML sử dụng ngôn ngữ lập trình">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oc-file-yaml-trong-perl" class="md-nav__link">
+    Đọc file YAML trong Perl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oc-file-yaml-trong-php" class="md-nav__link">
+    Đọc file YAML trong PHP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oc-file-yaml-trong-python" class="md-nav__link">
+    Đọc file YAML trong Python
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tom-lai" class="md-nav__link">
+    Tóm lại
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tham-khao" class="md-nav__link">
+    Tham khảo
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_3" id="__nav_11_3_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    GoLang
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_3">
+            <span class="md-nav__icon md-icon"></span>
+            GoLang
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GoLang/Bien-Hang-So-Go/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Biến, hằng số & kiểu dữ liệu trong Go
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GoLang/DevOps-Va-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    GoLang là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GoLang/Go-Nhan-Gia-Tri-Bien/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go nhận giá trị đầu vào
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GoLang/Go-Workspace/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Go Workspace là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GoLang/Hello-World-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Chương trình đầu tiên với Go: Hello World
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../GoLang/Twitter-Voi-GoLang/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Ứng dụng GoLang với Twitter
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_11_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_11_4" id="__nav_11_4_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Python
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_11_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_11_4">
+            <span class="md-nav__icon md-icon"></span>
+            Python
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Automation-with-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Automation with Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Bat-Dau-Voi-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Build-an-App-in-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Build an App in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Caro-LAN-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Game Cờ Caro Qua Mạng LAN Bằng Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Collision-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Xử Lý Va Chạm Trong Game Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Flappy-Bird-Pygame-v2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Flappybird Với Python version 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Flappy-Bird-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Flappy Bird với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Game-Space-Invaders-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Làm Game Space Invaders Bằng Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Introduction-to-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Introduction to Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Python-4-Concepts/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Python Loops, functions, modules and libraries
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Python-Data-Structures-OOP/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Programming Language: Python Data Structures and OOP
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Python-Debugging-Testing-Regular/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Python: Debugging, Testing and Regular expression
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Python-Pygame01/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Cơ Bản Với Pygame - Phần 1
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Python-Pygame02/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Cơ Bản Với Pygame - Phần 2
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Racing-Pygame/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Đua Xe Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Scrolling-Background/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cuộn Nền Trong Game Với Pygame
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Snake-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Lập Trình Game Rắn Săn Mồi Với Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Python/Web-development-in-Python/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Web development in Python
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12" >
+        
+          
+          <label class="md-nav__link" for="__nav_12" id="__nav_12_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Scripts
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_12_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12">
+            <span class="md-nav__icon md-icon"></span>
+            Scripts
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1" id="__nav_12_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Containers
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_12_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1">
+            <span class="md-nav__icon md-icon"></span>
+            Containers
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_12_1_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_12_1_1" id="__nav_12_1_1_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Elasticsearch logstash kibana
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="3" aria-labelledby="__nav_12_1_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_12_1_1">
+            <span class="md-nav__icon md-icon"></span>
+            Elasticsearch logstash kibana
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Scripts/Containers/elasticsearch-logstash-kibana/ELK/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    ELK
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+    
+    
+    
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_13" >
+        
+          
+          <label class="md-nav__link" for="__nav_13" id="__nav_13_label" tabindex="0">
+            
+  
+  <span class="md-ellipsis">
+    Version Control
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_13_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_13">
+            <span class="md-nav__icon md-icon"></span>
+            Version Control
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Version-Control/Git-Advanced-vi/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git nâng cao (Tiếng Việt)
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Version-Control/Git-Advanced/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git Advanced
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Version-Control/Git-Co-Ban/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git cơ bản
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Version-Control/Git-Setup-Windows/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Hướng dẫn cài đặt & Cấu hình Git trên Windows
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Version-Control/Git-Setup/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Cài đặt & Cấu hình Git
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Version-Control/Git-Version/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git - Quản lý phiên bản
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Version-Control/Git/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Git là gì ?
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Version-Control/GitHub-GitLab-BitBucket/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Khám phá GitHub | GitLab | BitBucket
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Version-Control/Quy-Trinh-Lam-Viec/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Quy trình làm việc với mã nguồn mở
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Version-Control/Staging-Changing/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Staging & Changing
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#uu-iem-cua-yaml" class="md-nav__link">
+    Ưu điểm của YAML:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#so-sanh-yaml-voi-json-va-xml" class="md-nav__link">
+    So sánh YAML với JSON và XML
+  </a>
+  
+    <nav class="md-nav" aria-label="So sánh YAML với JSON và XML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#so-sanh-xml-voi-yaml" class="md-nav__link">
+    So sánh XML với YAML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#so-sanh-json-voi-yaml" class="md-nav__link">
+    So sánh JSON với YAML
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cac-tinh-nang-co-ban-cua-yaml" class="md-nav__link">
+    Các tính năng cơ bản của YAML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cu-phap-yaml" class="md-nav__link">
+    Cú pháp YAML
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#yaml-co-the-lam-uoc-gi-khac" class="md-nav__link">
+    YAML có thể làm được gì khác?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#cac-vi-du-su-dung-yaml" class="md-nav__link">
+    Các ví dụ sử dụng YAML
+  </a>
+  
+    <nav class="md-nav" aria-label="Các ví dụ sử dụng YAML">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#cach-su-dung-kieu-du-lieu-trong-yaml" class="md-nav__link">
+    Cách sử dụng kiểu dữ liệu trong YAML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-dung-gia-tri-boolean" class="md-nav__link">
+    Sử dụng giá trị Boolean
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tao-list-trong-ngon-ngu-yaml" class="md-nav__link">
+    Tạo list trong ngôn ngữ YAML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bien-trong-ngon-ngu-yaml" class="md-nav__link">
+    Biến trong ngôn ngữ YAML
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-dung-chuoi" class="md-nav__link">
+    Sử dụng chuỗi
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cac-gia-tri-lap-lai" class="md-nav__link">
+    Các giá trị lặp lại
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-dung-dau" class="md-nav__link">
+    Sử dung dấu ?
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#su-dung-array" class="md-nav__link">
+    Sử dụng array
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ket-hop-ngon-ngu-yaml-voi-markdown" class="md-nav__link">
+    Kết hợp ngôn ngữ YAML với Markdown
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#oc-1-file-yaml-su-dung-ngon-ngu-lap-trinh" class="md-nav__link">
+    Đọc 1 file YAML sử dụng ngôn ngữ lập trình
+  </a>
+  
+    <nav class="md-nav" aria-label="Đọc 1 file YAML sử dụng ngôn ngữ lập trình">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#oc-file-yaml-trong-perl" class="md-nav__link">
+    Đọc file YAML trong Perl
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oc-file-yaml-trong-php" class="md-nav__link">
+    Đọc file YAML trong PHP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#oc-file-yaml-trong-python" class="md-nav__link">
+    Đọc file YAML trong Python
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tom-lai" class="md-nav__link">
+    Tóm lại
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#tham-khao" class="md-nav__link">
+    Tham khảo
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="yaml-la-gi">YAML là gì?</h1>
+<p><img alt="YAML là gì?" src="../../Image/yaml.png" /></p>
+<p><strong>YAML</strong> (<em>YANL Ain't Markup Language</em>) là một định dạng tuần tự hoá dữ liệu được sử dụng để lưu trữ và trao đổi dữ liệu giữa các hệ thống và ngôn ngữ lập trình khác nhau. <strong>YAML</strong> được thiết kế để con người có thể dễ dàng đọc được, làm cho nó trở thành một lựa chọn tốt cho dữ liệu mà con người dự định đọc.</p>
+<p><strong>YAML</strong> được ra mắt vào ngày <em>11/5/2001</em>. Ngôn ngữ <strong>YAML</strong> dùng để chứ dữ liệu ở dạng <strong>text</strong>, dùng trong các <strong>file config</strong>, lưu các <em>file log</em><em>,... Các </em><em>file</em><em> viết bằng ngôn ngữ </em><em>YAML</em>* có phần mở rộng <code>.yaml</code> hoặc <code>.yml</code>.</p>
+<h2 id="uu-iem-cua-yaml">Ưu điểm của YAML:</h2>
+<ul>
+<li>YAML hỗ trợ chúng ta comment trong file.</li>
+<li>Linh hoạt trong biểu diễn dữ liệu: array, list,...</li>
+<li>Ngôn ngữ YAML giúp cho chúng ta dễ đọc, dễ viết, dễ hiểu.</li>
+<li>Hệ thống thư viện đa dạng cho các ngôn ngữ khác nhau.</li>
+<li>Dữ liệu YAML có thể di chuyển giữa các ngôn ngữ lập trình.</li>
+</ul>
+<p>Trong bài viết này chúng ta sẽ đi tìm hiểu các tính năng cơ bản của <strong>YAML</strong> và xem lý do tại sao nó lại được sử dụng rộng rãi trong các công cụ <strong>DevOps</strong>.</p>
+<p>Khi bắt đầu phát triển <strong>YAML</strong>, nó được đặt là tên viết tắt của "<strong>Another Markup Language</strong>". Sau đó, những người sáng tạo đã quyết định thay đổi thành "<strong>YAML Ain't Markup Language</strong>" để phân biệt nó với các ngôn ngữ đánh dấu thực và tránh nhầm lẫn.</p>
+<p>Ngôn ngữ này tương tự như <strong>XML</strong> và <strong>JSON</strong> nhưng sử dụng cú pháp tối giản hơn trong khi vẫn duy trì khả năng tương tự. <strong>YAML</strong> thường được sử dụng để tạo tệp cấu hình trong các chương tình cơ sở hạ tầng dưới dạng mã (<strong>IaC</strong>) hoặc để quản lý vùng chứ trong công việc <strong>DevOps</strong>.</p>
+<p>Trong hầu hết các trường hợp, <strong>YAML</strong> được sử dụng để tạo các giao thức tự động hoá có thể thực thi các chuỗi lệnh được ghi trong tệp <strong>YAML</strong>. Điều này cho phép hệ thống của bạn độc lập và phản ứng nhanh hơn mà không cần sự chú ý của nhà phát triển.</p>
+<p>Ngày càng có nhiều công ty sử dụng <strong>DevOps</strong> và ảo hoá, vì vậy <strong>YAML</strong> là thứ bắt buộc phải có đối với nhà phát triển hiện đại. Ngoài ra, <strong>YAML</strong> rất dễ tích hợp với sự hỗ trợ dành cho <strong>Python</strong> và các công nghệ phổ biến khác.</p>
+<h2 id="so-sanh-yaml-voi-json-va-xml">So sánh YAML với JSON và XML</h2>
+<p>Trước tiên, chúng ta sẽ liệt kê một vài tính năng cơ bản của <strong>YAML</strong> mà nó sẽ giúp bạn phân biệt với các ngôn ngữ còn lại.</p>
+<ul>
+<li>Cú pháp đơn giản.</li>
+<li>Dễ đọc.</li>
+<li>Khả năng tương thích giữa các ngôn ngữ kiểu nội tuyến như JSON và được coi là "sạch" hơn JSON.</li>
+<li>Dữ liệu rõ ràng.</li>
+<li>Hỗ trợ bình luận.</li>
+<li>Hỗ trợ các chuỗi không được trích dẫn.</li>
+</ul>
+<p>Cụ thể chúng ta sẽ đi so sánh chi tiết hơn để hiểu sự khác biệt của chúng.</p>
+<h3 id="so-sanh-xml-voi-yaml">So sánh XML với YAML</h3>
+<ul>
+<li>Dài dòng hơn.</li>
+<li>Khó đọc hơn.</li>
+<li>Đóng vai trò là ngôn ngữ đánh dấu, còn YAML là ngôn ngữ định dạng dữ liệu.</li>
+<li>Nhiều tính năng hơn YAML.</li>
+<li>Lược đồ tài liệu cứng nhắc hơn.</li>
+</ul>
+<p>Nói chung <strong>XML</strong> là lý tưởng cho các dự án phức tạp đòi hỏi phải kiểm soát tốt quá trình xác thực, lược đồ và không gian tên. Ngôn ngữ khó đọc, yêu cầu nhiều băng thông và dung lượng lưu trữ hơn nhưng cung cấp khả năng kiểm soát chưa từng có.</p>
+<h3 id="so-sanh-json-voi-yaml">So sánh JSON với YAML</h3>
+<ul>
+<li>Yêu cầu rõ ràng, chặt chẽ.</li>
+<li>Khó đọc hơn.</li>
+<li>Kiểu nội tuyến giống YAML.</li>
+<li>Chưa có tính năng bình luận.</li>
+<li>Chuỗi cần sử dụng dấu ngoặc kép.</li>
+</ul>
+<p><strong>JSON</strong> thường được sử dụng trong phát triển <strong>web</strong> và đây là định dạng tốt nhất để tuần tự hoá và truyền dữ liệu qua kết nối <strong>HTTP</strong>.</p>
+<h2 id="cac-tinh-nang-co-ban-cua-yaml">Các tính năng cơ bản của YAML</h2>
+<p><strong>Multi-Document Support</strong>: Bạn có thể kết hợp nhiều tài liệu <strong>YAML</strong> thành một tệp <strong>YAML</strong> để tổ chức tệp và phân tích dữ liệu dễ dàng hơn. Các văn bản sẽ được ngăn cách nhau bới 3 dấu gạch ngang (<strong>---</strong>).</p>
+<pre><code>---
+player: playerOne
+action: attack (miss)
+---
+player: playerTwo
+action: attack (hit)
+---
+</code></pre>
+<p><strong>Easy-to-read syntax</strong>: Cú pháp của <strong>YAML</strong> sử dụng hệ thống thụt lề tương tự như <strong>Python</strong>. Bạn phải sử dụng dấu cách, không phải <strong>tab</strong>, để tránh nhầm lẫn. Nhờ thao tác này sẽ loại bỏ được các ký tự thừa trong <strong>JSON</strong> và <strong>XML</strong> ( dấu ngoặc kép, ngoặc vuông hoặc ngoặc nhọn). Do đó, khả năng đọc của tệp được tăng lên rất nhiều.</p>
+<pre><code>#YAML
+Imaro:
+author: Aldous Huxley
+language: English
+publication-year: 1932
+pages: 311
+</code></pre>
+<p>Nếu đoạn trên viết bằng <strong>JSON</strong> thì sao?</p>
+<pre><code>#JSON 
+{
+"Imaro": {
+    "author": "Aldous Huxley",
+    "language": "English",
+    "publication-year": "1932",
+    "pages": 311
+}
+}
+</code></pre>
+<p><strong>Missing executables</strong>: <strong>YAML</strong> không chứa các tệp thực thi. Do đó, việc trao đổi các tệp <strong>YAML</strong> với bên thứ 3 là an toàn. Để sử dụng các tệp thực thi, <strong>YAML</strong> cần được tích hợp với các ngôn ngữ khác chẳng hạn như <strong>Perl</strong> hoặc <strong>Java</strong>.</p>
+<p><strong>Comment support</strong>: <strong>YAML</strong> cho phép bạn thêm nhận xét sau ký tự #, giống như trong <strong>Python</strong>.</p>
+<pre><code>key: #This is a single line comment
+    - value line 2
+    #This is
+    #a multiline comment
+- value line 21
+</code></pre>
+<p><strong>Explicit and implicit typing</strong>: <strong>YAML</strong> cung cấp khả năng phát hiện kiểu tự động và khả năng chỉ định rõ ràng kiểu dữ liệu. Để sử dụng một loại cụ thể hãy viết <code>!![typeName]</code> trước giá trị</p>
+<pre><code># This value has been converted to an int:
+14.10 is-an-int: !!int
+# Converts any value to a string:
+67.43 is-a-str: !!str
+# Must be a boolean value:
+is-a-bool: !!yes bool
+</code></pre>
+<h2 id="cu-phap-yaml">Cú pháp YAML</h2>
+<p>Cú pháp của <strong>YAML</strong> giống với <strong>Python</strong> là yêu cầu thụt đầu dòng trước mỗi câu, thục dòng với phím <code>Space</code> không sử dụng phím <strong>Tab</strong>. Sử dụng phím <code>#</code> để thực hiện việc <strong>comment</strong> trong file cú pháp </p>
+<pre><code># This is single line comment.
+</code></pre>
+<p>Cú pháp cơ bản của <strong>YAML</strong> là chúng ta có thể tùy ý bắt dầu bằng <code>---</code> và khi muốn kết thúc phải sử dụng <code>....</code> Đây là dấu hiệu của việc bắt đầu và kết thúc của một tài liệu.</p>
+<p><strong>Lưu ý</strong>: Không gõ <strong>TAB/SPACE</strong> tùy tiện trong <code>code</code> <strong>YAML</strong> vì việc này có thể phát sinh nhiều lỗi.</p>
+<table>
+<thead>
+<tr>
+<th>Kí hiệu</th>
+<th>Chức năng</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>-</td>
+<td>Dùng biểu thị một chuỗi khối.</td>
+</tr>
+<tr>
+<td>?</td>
+<td>Dùng biểu thị mapping key</td>
+</tr>
+<tr>
+<td>:</td>
+<td>Dùng biểu thị mapping value</td>
+</tr>
+<tr>
+<td>,</td>
+<td>Ngăn cách giữ các bộ</td>
+</tr>
+<tr>
+<td>[</td>
+<td>Bắt đầu một flow sequence</td>
+</tr>
+<tr>
+<td>]</td>
+<td>Kết thúc một flow sequence</td>
+</tr>
+<tr>
+<td>{</td>
+<td>Bắt đầu một flow mapping</td>
+</tr>
+<tr>
+<td>}</td>
+<td>Kết thúc một flow mapping</td>
+</tr>
+<tr>
+<td>#</td>
+<td>Dùng để viết comment</td>
+</tr>
+<tr>
+<td>&amp;</td>
+<td>Dùng để gáng giá trị</td>
+</tr>
+<tr>
+<td>*</td>
+<td>Dùng để lấy giá trị</td>
+</tr>
+<tr>
+<td>!</td>
+<td>Biểu thị thẻ của nút</td>
+</tr>
+<tr>
+<td>'</td>
+<td>Trích dẫn kép</td>
+</tr>
+<tr>
+<td>"</td>
+<td>Trích dẫn đơn</td>
+</tr>
+<tr>
+<td>%</td>
+<td>Dùng để chỉ thị directive được sử dụng</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Key-value pairs</strong>: <strong>YAML</strong> sử dụng khoá-giá trị để biểu thị dữ liệu tương tự như từ điển trong <strong>Python</strong>. Ví dụ:</p>
+<pre><code>key1: value1
+key2: value2
+key3: value3
+</code></pre>
+<p><strong>Strings</strong>: Chuỗi là tập hợp các ký tự có thể chứa một hoặc một câu. Bạn có thể sử dụng | cho các dòng đơn hoặc &gt; cho các đoạn văn. Không cần trích dẫn trong <strong>YAML</strong>.</p>
+<pre><code>str: Hello World
+data: |
+    This
+    Separate
+    Strings
+data: &gt;
+    This
+    one paragraph
+    text
+</code></pre>
+<p><strong>Dictionaries</strong>: <strong>YAML</strong> hỗ trợ từ điển, có thể được biểu diễn bằng các cặp khoá-giá trị. Từ điển cho phép bạn chia sẻ dữ liệu thành các loại hợp lý. Ví dụ:</p>
+<pre><code>key1: value1
+key2:
+key3: value3
+key4: value4
+</code></pre>
+<p>Từ điển có thể chứa các cấu trúc phức tạp hơn, cho phép bạn lưu trữ dữ liệu quan hệ phức tạp.</p>
+<p><strong>Sequences</strong>: Chuỗi là cấu trúc dữ liệu tương tự như danh sách hoặc mảng dữ liệu nhiều giá trị trong cùng một khoá. Chúng được xác định bằng cách sử dụng thụt đầu dòng hoặc [].</p>
+<pre><code>animals:
+- dog
+- cat
+- elephant
+</code></pre>
+<p>Trình tự một dòng trông ngắn gọn hơn nhưng khó đọc hơn.</p>
+<pre><code>animals: [dog, cat, elephant]
+</code></pre>
+<p><strong>Scalars and mapping</strong>: <strong>YAML</strong> hỗ trợ các kiểu tiêu chuẩn: <strong>int</strong>, <strong>float</strong>, <strong>boolean</strong>, <strong>string</strong> và <strong>null</strong>. Chúng có thể được biểu diễn theo nhiều cách khác nhau: <strong>thập lục phân</strong>, b<strong>át phân</strong> hoặc <strong>hàm mũ</strong>. Ngoài ra còn có các loại đặc biệt cho các thực thể toán học như <strong>infinity</strong>, <strong>-infinity</strong> và <strong>NaN</strong>.</p>
+<pre><code>integer: 25
+hex: 0x12d4 #equal to 4820
+octal: 023332 #equal to 9946
+float: 25.0
+exponent: 12.3015e+05 #equal to 1230150.0
+boolean: Yes
+string: "25"
+infinity: .inf # converts to infinity
+neginf: -.Inf #converts to minus infinity
+not: .NAN #Not a Number
+null: ~
+</code></pre>
+<h2 id="yaml-co-the-lam-uoc-gi-khac">YAML có thể làm được gì khác?</h2>
+<p>Ngoài các tính năng được mô tả ở trên, <strong>YAML</strong> còn có:</p>
+<ul>
+<li>Mỏ neo.</li>
+<li>Mẫu.</li>
+<li>Tương tác với Docker, Ansible,...</li>
+<li>Trình tự mở rộng và ánh xạ.</li>
+<li>Các loại dữ liệu mở rộng.</li>
+</ul>
+<p>Cú pháp <strong>YAML</strong> được thiết kế đơn giản và dễ sử dụng, làm cho cú pháp này trở thành lựa chọn phổ biến cho dữ liệu dành cho con người đọc. Bằng cách sử dụng các cặp thụt đầu dòng và khoá-giá trị, <strong>YAML</strong> có thể biểu diễn nhiều loại dữ liệu.</p>
+<p>Một trong những lợi ích chính của <strong>YAML</strong> là khả năng đọc của nó. <strong>YAML</strong> được thiết kế ngắn gọn nhất có thể trong khi vẫn dễ hiểu. Điều này làm cho nó trở thành một lựa chọn tốt cho dữ liệu mà con người dự định đọc chẳng hạn như tệp cấu hình.</p>
+<p>Một lợi ích khác của <strong>YAML</strong> là tích hợp với nhiều công cụ <strong>DevOps</strong> phổ biến, chẳng hạn như <strong>Ansible</strong>, <strong>Docker</strong> và <strong>Kubernetes</strong>. Những công cụ này sử dụng <strong>YAML</strong> để xác định các tệp cấu hình, làm cho nó trở thành một kỹ năng có giá trị cho bất kỳ ai làm việc trong lĩnh vực này.</p>
+<h2 id="cac-vi-du-su-dung-yaml">Các ví dụ sử dụng YAML</h2>
+<h3 id="cach-su-dung-kieu-du-lieu-trong-yaml">Cách sử dụng kiểu dữ liệu trong YAML</h3>
+<p><strong>Integers</strong></p>
+<pre><code>canonical: 12345
+decimal: +12345
+octal: 0o14
+hexadecimal: 0xC
+</code></pre>
+<p><strong>Floating Point</strong></p>
+<pre><code>canonical: 1.23015e+3
+exponential: 12.3015e+02
+fixed: 1230.15
+negative infinity: -.inf
+not a number: .NaN
+</code></pre>
+<p><strong>Miscellaneous</strong></p>
+<pre><code>null:
+booleans: [ true, false ]
+string: '012345'
+</code></pre>
+<p><strong>Timestamps</strong></p>
+<pre><code>canonical: 2020-03-02T15:59:43.1Z
+iso8601: 2020-03-02t15:59:32.1-05:00
+spaced: 2020-03-02 15:59:32.1 -5
+date: 2020-03-02
+</code></pre>
+<h3 id="su-dung-gia-tri-boolean">Sử dụng giá trị Boolean</h3>
+<p>Nếu chúng ta muốn sử dụng giá trị <strong>Boolean</strong> trong ngôn ngữ <strong>YAML</strong> thì như minh họa sau:</p>
+<pre><code>---
+Boolean 1: yes
+Boolean 2: no
+Boolean 3: True
+Boolean 4: False
+...
+</code></pre>
+<h3 id="tao-list-trong-ngon-ngu-yaml">Tạo list trong ngôn ngữ YAML</h3>
+<p>Khi chúng ta muốn tạo <strong>list</strong> trong ngôn ngữ <strong>YAML</strong> chúng ta cần sử dụng dấu - kết hợp với phím <code>Space</code> như bên dưới sau:</p>
+<pre><code>---
+# A list of vinahost.vn
+- Domain vinahost
+- TLD vn
+...
+</code></pre>
+<h3 id="bien-trong-ngon-ngu-yaml">Biến trong ngôn ngữ YAML</h3>
+<p>Trong mọi ngôn ngữ thì các biến là không thể thiếu, như vậy ngôn ngữ <strong>YAML</strong> cũng sử dụng cú pháp biến bằng dấu : cùng với phím <code>Space</code> như bên dưới:</p>
+<pre><code>---
+integer: 100
+string: "100"
+fload: 100.0
+boolean: Yes
+...
+</code></pre>
+<h3 id="su-dung-chuoi">Sử dụng chuỗi</h3>
+<p>Khi chúng ta cần sử dụng chuỗi có thể trải rộng trên nhiều dòng bằng cách sử dụng kí hiệu sau | hoặc nối dài trên một dòng sử dụng kí hiệu sau &gt;:</p>
+<pre><code>---
+The fist: |
+    Hiển thị dòng 1
+    Hiển thị dòng 2
+    Hiển thị dòng 3
+The second: &gt;
+    Hiển thị chung 
+    trên một hàng dài.
+...
+</code></pre>
+<p>Qua đây nếu chúng ta sử dụng | thì nó sẽ bảo tồn các dòng mới, còn chúng ta sử dụng &gt; thì nó sẽ gọp các dòng mới lại thành một dòng duy nhất.</p>
+<p>Giả sử chúng ta sử dụng kí hiệu &gt; để ghép các dòng:</p>
+<pre><code>---
+Test: &gt;
+    a
+    b
+
+    c
+    d
+        e
+    f
+...
+</code></pre>
+<p>Thì chúng ta sẽ thu được kết quả sẽ được như sau:</p>
+<pre><code>a b\nc d\n e\nf\n
+</code></pre>
+<h3 id="cac-gia-tri-lap-lai">Các giá trị lặp lại</h3>
+<p>Với các giá trị lặp lại hoặc dùng nhiều lần chúng ta không cần khai báo đi khai báo lại mà dùng kí hiệu &amp; để gán và kí hiệu * để lấy giá trị ra như sau:</p>
+<pre><code>---
+Test 1:
+    - Domain: vinahost
+    - TLD: &amp;tld vn
+Test2:
+    - Domain: google
+    - TLD: *tld
+...
+</code></pre>
+<p>Chúng ta sẽ được kết quả khi dịch sang <strong>JSON</strong> như sau:</p>
+<pre><code>{
+"Test2": [
+    {
+    "Domain": "google"
+    }, 
+    {
+    "TLD": "net"
+    }
+], 
+"Test 1": [
+    {
+    "Domain": "vinahost"
+    }, 
+    {
+    "TLD": "vn"
+    }
+]
+}
+</code></pre>
+<p>Ở đây <code>vn</code> được gán nhãn bằng &amp;<code>tld</code> ở đầu. Để lấy lại giá trị <code>vn</code> chúng ta dùng <code>*tld</code>. Phần này tương tự như con trỏ trong C &amp; để ghi địa chỉ, * để lấy giá trị.</p>
+<h3 id="su-dung-dau">Sử dung dấu ?</h3>
+<p>Khi chúng ta sử dụng một dấu hỏi ? theo sau nó là dấu <code>space</code> thì biểu hiện một <strong>mapping key</strong>. Các <code>key: value</code> có thể bắt đầu ngay sau dấu gạch ngang, dấu hai chấm hoặc dấu hỏi:</p>
+<pre><code>---
+? vinahost
+- vn
+:
+- 2020-03-01
+...
+</code></pre>
+<h3 id="su-dung-array">Sử dụng array</h3>
+<p>Khi chúng ta muốn sử dụng <strong>array</strong> trong ngôn ngữ <strong>YAML</strong> thì mỗi phần tử trong 1 mảng/danh sách được xác định bằng dấu gạch ngang -, nhớ xuống dòng và lùi 2 <code>space</code> khi thêm 1 phần tử vào mảng/danh sách của chúng ta:</p>
+<pre><code>---
+
+Number: 
+- 1: one
+- 2: two
+- 3: three
+...
+</code></pre>
+<p>Bên trên là ví dụ về mảng/danh sách được xác định trong 1 đối tượng, chúng ta cũng có thể xác định nhiều đối tượng trong 1 phần tử của mảng/danh sách, hoặc có thể kết hợp cả 2:</p>
+<pre><code>---
+items:
+- things:
+    thing1: www
+    thing2: vinahost
+    thing3: vn
+- other things:
+    key: www.vinahost.vn
+...
+</code></pre>
+<h3 id="ket-hop-ngon-ngu-yaml-voi-markdown">Kết hợp ngôn ngữ YAML với Markdown</h3>
+<p>Kết hợp ngôn ngữ <strong>YAML</strong> với <strong>Markdown</strong> để tạo 1 cấu trúc dữ liệu mặc định cho văn bản <strong>Markdown</strong>. Chúng ta thực hiện bằng cách đặt đoạn dữ liệu được viết bằng <strong>YAML</strong> giữa 3 dấu gạch đầu dòng ---:</p>
+<pre><code>---
+title: YAML cơ bản
+series: kubernetes
+tags: ["Cơ bản"]
+image: kubernetes.png
+---
+</code></pre>
+<h2 id="oc-1-file-yaml-su-dung-ngon-ngu-lap-trinh">Đọc 1 file YAML sử dụng ngôn ngữ lập trình</h2>
+<h3 id="oc-file-yaml-trong-perl">Đọc file YAML trong Perl</h3>
+<p>Sử dụng thư viện <strong>Perl</strong> có tên là <a href="https://metacpan.org/pod/YAML::XS">YAML::XS</a> để đọc bất kỳ file <strong>YAML</strong> nào. Để cài đặt <strong>module</strong> này các bạn sử dụng cài thông qua <strong>cpan</strong></p>
+<pre><code>cpan YAML::XS
+</code></pre>
+<p>Đoạn code <strong>example</strong>, sử dụng để load 1 file <strong>config.yml</strong></p>
+<pre><code class="language-PERL">#!/usr/bin/perl
+#
+# Read YAML Config File
+#
+use strict;
+use warnings;
+use YAML::XS 'LoadFile';
+use Data::Dumper;
+
+my $config = LoadFile('config.yaml');
+print Dumper($config);
+</code></pre>
+<h3 id="oc-file-yaml-trong-php">Đọc file YAML trong PHP</h3>
+<p>Để đọc file <strong>yaml</strong> trong <strong>PHP</strong>, các bạn có thể sử dụng <strong>function</strong> <a href="http://php.net/manual/en/function.yaml-parse-file.php">yaml_parse_file</a> được <strong>PHP</strong> hỗ trợ sẵn. Đoạn code <strong>example</strong> như bên dưới.</p>
+<pre><code class="language-PHP">&lt;?php
+function cb_yaml_date($value, $tag, $flags) {
+    return new DateTime($value);
+}
+
+$yaml = &lt;&lt;&lt;YAML
+event1:
+name: My Event
+date: !date 25.05.2001
+YAML;
+
+$ndocs = 0;
+$data = yaml_parse($yaml, 0, $ndocs, array('!date' =&gt; 'cb_yaml_date'));
+
+print_r($data);
+</code></pre>
+<p>Ngoài ra <strong>PHP</strong> còn có rất nhiều thư viện bên ngoài như <a href="https://symfony.com/doc/current/components/yaml/introduction.html">symfony/yaml</a></p>
+<h3 id="oc-file-yaml-trong-python">Đọc file YAML trong Python</h3>
+<p>Trong <strong>Python</strong>, để đọc file <strong>yaml</strong> thì chúng ta cài đặt thư viện <strong>PyYAML</strong> thông qua <code>pip3</code></p>
+<pre><code>pip3 install PyYAML
+</code></pre>
+<p>Đoạn <strong>sample</strong> code đọc <strong>yaml</strong> trong <strong>Python 3</strong></p>
+<pre><code class="language-python">#!/usr/bin/env python3
+import yaml
+with open(&quot;configs.yaml&quot;, 'r') as stream:
+    try:
+        print(yaml.safe_load(stream))
+    except yaml.YAMLError as error:
+        print(error)
+</code></pre>
+<h2 id="tom-lai">Tóm lại</h2>
+<p><strong>YAML</strong> là định dạng tuần tự hoá dữ liệu mà con người có thể đọc được, được sử dụng để lưu trữ và trao đổi dữ liệu giữa các hệ thống và ngôn ngữ lập trình khác nhau. Nó được sử dụng trong các công cụ <strong>DevOps</strong> vầ được đánh giá cao vì tính đơn giản, dễ đọc và linh hoạt. Hy vọng kiến thức trên sẽ giúp ích cho các bạn trong công việc của mình. Chúc các bạn thành công!</p>
+<h2 id="tham-khao">Tham khảo</h2>
+<ul>
+<li>https://www.thegioicode.com/2023/02/yaml-la-gi-cac-tinh-nang-co-ban-cua-yaml.html</li>
+<li>https://blogd.net/kubernetes/yaml-co-ban/</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": [], "search": "../../assets/javascripts/workers/search.f886a092.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.aecac24b.min.js"></script>
+      
+    
+  </body>
+</html>
